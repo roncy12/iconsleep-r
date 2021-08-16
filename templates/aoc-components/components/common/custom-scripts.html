@@ -1,0 +1,53 @@
+<script type="text/javascript" >
+
+    var $animation_elements = $('.animation-element');
+    var $window = $(window);
+    var refresherIndex;
+    
+    function check_if_in_view() {
+      var window_height = $window.height();
+      var window_top_position = $window.scrollTop();
+      var window_bottom_position = (window_top_position + window_height);
+
+      $.each($animation_elements, function() {
+        var $element = $(this);
+        var element_height = $element.outerHeight();
+        var element_top_position = $element.offset().top;
+        var element_bottom_position = (element_top_position + element_height);
+     
+        //check to see if this current container is within viewport
+        if ((element_bottom_position >= window_top_position) &&
+            ((element_top_position+60) <= window_bottom_position)) {
+            $element.addClass('in-view');
+            $element.addClass('_refresher'); 
+            var refresherIndex = setInterval(function(){ _view_refresher($element); }, 300000);
+
+        } else {
+            $element.removeClass('in-view');
+            $element.removeClass('_refresher'); 
+            
+            clearInterval(refresherIndex);
+        }
+      });
+    }
+
+    function _view_refresher($element){
+        if($element.hasClass( "_refresher" )){
+            $element.removeClass('in-view');
+            $refresher = setTimeout(function() {
+                $element.addClass('in-view');
+            }, 250);
+            
+        }	
+    }
+
+    $window.on('scroll resize', 
+        function(){
+            if($window.width() > 800){
+                check_if_in_view();
+            }
+        }
+    );
+    $window.trigger('scroll');
+    </script>
+

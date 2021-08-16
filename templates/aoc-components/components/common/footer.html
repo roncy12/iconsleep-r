@@ -1,0 +1,150 @@
+{{#if banners.bottom}}
+    {{#if settings.data_tag_enabled}}
+        <div class="banners" data-banner-location="bottom">
+            {{#each (limit banners.bottom_metadata 1)}}
+                <div class="banner" data-event-type="promotion" data-entity-id="{{this.id}}" data-name="{{this.banner-name}}" data-position="{{this.location}}" data-name="{{this.banner-name}}">
+                    <div data-event-type="promotion-click">
+                        {{{this.content}}}
+                    </div>
+                </div>
+            {{/each}}
+        </div>
+    {{else}}
+        <div class="banners" data-banner-location="bottom">
+            <div class="banner">
+                {{{limit banners.bottom 1}}}
+            </div>
+        </div>
+    {{/if}}
+
+{{/if}}
+<footer class="footer support" role="contentinfo">
+    <h2 class="footer-title-sr-only">{{lang 'footer.title'}}</h2>
+    <div class="footer-container">
+        {{#if theme_settings.social_icon_placement_bottom '!==' 'bottom_none'}}
+            <article class="footer-info-col
+                footer-info-col--social
+                footer-info-col--{{#if theme_settings.social_icon_placement_bottom '===' 'bottom_left'}}left{{else}}right{{/if}}"
+                data-section-type="footer-webPages">
+                    <h3 class="footer-info-heading">{{lang 'social.connect'}}</h3>
+                    {{> components/common/social-links}}
+            </article>
+        {{/if}}
+        <section class="footer-info">
+            
+            <article class="footer-info-col footer-info-col--small mobile" data-section-type="footer-webPages">
+                <h3 class="footer-info-heading" >Company</h3>
+                <p style="margin-bottom: 0; margin-top: 0;">
+                 
+                    Email: <br>
+                    <a class="email-footer-sec" href="mailto:support@icon-sleep.com">support@icon-sleep.com</a></p>
+                <p style="margin-top: 0;">Service Hours: <br><span style="color: #132448; font-weight: bold;">Mon-Fri: 8am-5pm</span></p>            
+            </article>
+            
+             <article class="footer-info-col footer-info-col--small mobile" data-section-type="footer-webPages"> 
+        
+                <h3 class="footer-info-heading">{{lang 'footer.navigate'}}</h3>
+                <ul class="footer-info-list">
+                    <li>
+                        <a href="/green-tea-memory-foam-bed-mattres/">Shop Mattress</a>
+                    </li>
+                    <li>
+                        <a href="/sleep-trial/">Sleep Trial</a>
+                    </li>
+                    <li>
+                        <a href="/the-truth/">The Truth</a>
+                    </li>
+                    <li>
+                        <a href="/about-us/">About Us</a>
+                    </li>
+                    <li>
+                        <a href="/reviews/">Reviews</a>
+                    </li>
+					
+                     <li>
+                        <a href="/track-order/">Track Order</a>
+                    </li>
+                    <li>
+                        <a href="/privacy-policy/">Privacy Policy</a>
+                    </li>
+                    <li>
+                        <a href="/warranty-claim/">Warranty Claim</a>
+                    </li>
+
+                </ul>
+            </article>
+            
+            
+            <article class="footer-info-col footer-info-col--small mobile" data-section-type="footer-webPages">
+                <h3 class="footer-info-heading">Support</h3>
+                <ul class="footer-info-list">
+                   
+                    <li>
+                        <a href="/blog/">Blog</a>
+                    </li>
+                    <li>
+                        <a href="/support/">Support Center</a>
+                    </li>
+                    <li>
+                        <a href="/mattress-care-setup/">Setup & Care Instructions</a>
+                    </li>
+                    <li>
+                        <a href="/faqs/">FAQs</a>
+                    </li>
+                     <li>
+                        <a href="/shipping-transit-chart/">Shipping Transit Chart</a>
+                    </li>
+                     <li>
+                        <a href="/product-certification/">Product Certification</a>
+                    </li>
+                </ul>
+            </article>
+
+            
+
+
+
+
+            <article class="footer-info-col footer-info-col--small mobile like-us-btn" data-section-type="newsletterSubscription">
+           
+                {{#if theme_settings.social_icon_placement_bottom}}
+                    <h3 class="footer-info-heading">Connect</h3>
+                    <a class="like-us" href="https://www.facebook.com/IconSleepMattresses/">
+                    <img class="like-us-img" src="https://cdn11.bigcommerce.com/s-z2qdisybty/product_images/uploaded_images/fb.png?t=1623205504&_ga=2.146581108.1588106158.1623054117-1835193253.1617777202">
+                 Like us on Facebook
+                    </a>
+                    {{> components/common/social-links}}
+                {{/if}}
+             
+            </article>
+        </section>
+        
+        {{#if theme_settings.geotrust_ssl_common_name}}
+            <div class="footer-geotrust-ssl-seal">
+                {{> components/common/geotrust-ssl-seal}}
+            </div>
+        {{/if}}
+        {{#if settings.paypal_commerce_credit_message}}
+
+        <div class="footer-copyright">
+            <p class="paypal-credit">{{nl2br settings.paypal_commerce_credit_message}}</p>
+        </div>
+        {{/if}}
+
+<div class="footer-flex">
+    <div class="footer-content"> 
+        <div>
+            {{#if theme_settings.show_copyright_footer}}
+                <div class="footer-copyright">
+                    <p class="powered-by">&copy; {{moment format="YYYY"}} {{settings.store_name}} </p>
+                </div>
+            {{/if}}
+        </div>
+        <div class="logo-footer">
+                {{> components/common/payment-icons}}
+        </div> 
+    </div>
+
+    </div>
+    </div>
+</footer>

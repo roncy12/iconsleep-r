@@ -1,0 +1,35 @@
+{{#partial "page"}}
+
+{{> components/common/breadcrumbs breadcrumbs=breadcrumbs}}
+
+<main class="page">
+    <section class="page-content page-content--centered">
+        <h1 class="page-heading">{{lang 'page_not_found.page_heading'}}</h1>
+        <p class="u-textAlignCenter">
+            {{lang 'page_not_found.message'}}
+        </p>
+
+        {{> components/common/search-box}}
+    </section>
+</main>
+<script>
+    
+  window.onscroll = function() { myFunction() };
+
+var header = document.getElementById("myHeader");
+var sticky = header.offsetTop;
+
+// function myFunction() {
+//  if (window.pageYOffset >= sticky) {
+//     header.classList.add("relative");
+//   } 
+  
+//   else {
+//     header.classList.remove("sticky");
+//   }
+// }
+
+
+</script>
+{{/partial}}
+{{> layout/base}}

@@ -1,0 +1,147 @@
+@import "colors";
+
+/**********HEADER**********/
+.header{
+    box-shadow: 0 4px 20px -10px #222;
+    position: relative;
+
+
+    .head-container {
+        display: flex;
+        width: 95%;
+        align-items: center;
+        margin: 0 auto;
+        justify-content: space-between;
+        padding: 1.5rem 0;
+        @media(max-width: 801px){    
+            display: flex;
+            width: auto;
+            margin: 0px auto;
+            padding: 0rem 0px;
+            justify-content: center;
+    }
+
+    }
+    .header-logo-image-container {
+        min-height: auto;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 70%;
+    }
+    .header-logo-image {
+        max-height: 80px;
+        vertical-align: middle;
+    }
+
+    .header-logo {
+        margin: 0;
+    }
+    
+    a.navPages-action {
+        color: $navsColor;
+        font-weight: 700;
+        letter-spacing: 1px;
+        font-family: Almarai!important;
+        font-size: 18px;
+        text-transform: capitalize;
+        padding: 0.78571rem 1.14286rem 0.25rem;
+        @media (min-width: 801px){  padding: 0.78571rem 1.14286rem 1.14286rem; }
+    }
+
+    .navUser {
+        @media screen and (max-width: 1260px) {
+            width: 100%; padding: 1.5rem 1.5rem;
+        }
+        @media (min-width: 801px){ padding: 0; }
+        .navUser-action {
+            color: $navsColor;
+            font-weight: 800;
+        }
+        span.countPill.cart-quantity {
+            background-color: #dd2424;
+            position: absolute;
+            top: 3px;
+            right: -5px;
+          
+        }
+    }
+}
+
+// Position
+.sticky{
+    position: fixed;
+}
+.relative{
+    position: relative;
+}
+
+// BODY BANNER 
+body {
+    padding-top: 0;
+    .body-home .body {
+        margin-top: 0;
+    }   
+    &.body-pages .body{
+        @media (min-width: 801px){
+            margin-top: 0;
+        }
+    }
+}
+.heroCarousel{
+
+	.heroCarousel-slide .heroCarousel-image {
+		object-fit: cover;
+	}		
+	.heroCarousel-content{
+        text-align: left;
+        width: 85%;
+		@media (min-width: 551px){
+		background-color: transparent;
+		* { color:#FFF;  font-weight: bold;  }
+		
+		.heroCarousel-title{  line-height: 1; font-size: 56px; color: #fff; font-weight: 400; text-transform: inherit; font-family: Almarai!important; } 
+        .heroCarousel-description{ margin:8px 0 0 0; } 
+            .button--primary{
+                background: $white;
+                border: 1px solid $white;
+                color: $navsColor;
+                font-weight: bold;
+                border-radius: 5px;
+            }
+		}
+	}
+}
+	
+/************* FOOTER ****************/
+.footer {
+    border-top: $transparent;
+    position: relative;
+    background: $white;
+    background-color: $white;
+    padding: 0;
+
+    .footer-flex{
+        background: $whiteSmoke;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: auto;
+    }
+    .footer-info {
+        margin: 0 auto;
+        max-width: none;
+        width: 75%;
+      
+    }
+    .footer-content {
+        width: 75%;
+        margin: 0 auto;
+        padding: 1rem 0;
+    }
+    @media (min-width: 801px){
+        .footer-info-col--small {
+            width: 25%;
+        }
+    }
+
+}

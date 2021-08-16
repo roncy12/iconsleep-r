@@ -1,0 +1,92 @@
+<a href="#main-content" class="skip-to-main-link">{{lang 'header.skip_to_main'}}</a>
+{{#if banners.top}}
+<div class="banners" data-banner-location="top">
+    {{#each (limit banners.top_metadata 1)}}
+    <div class="banner" data-event-type="promotion" data-entity-id="{{this.id}}" data-name="{{this.banner-name}}" data-position="{{this.location}}" data-banner-id="{{this.banner-name}}">
+        <div data-event-type="promotion-click">
+            {{{this.content}}}
+        </div>
+    </div>
+    {{/each}}
+</div>
+{{/if}}
+<header class="header" id="myHeader" role="banner">
+    <!-- <div class="top-header">
+        <nav class="container">
+            <div class="top-deals">
+                    <p class="dealofweek"><img  style="margin-right:7px;" src="https://cdn11.bigcommerce.com/s-tpv42kg/content/home/deals.png" alt=""><a href="https://www.kitchenessentials.ca/deals-of-the-week/">Deal's of the Week</a></p>
+            </div>
+            <div class="top-shipping">
+                            <img style="margin-right:7px;" class="__mce_add_custom__" title="free-shiping.png" src="https://cdn11.bigcommerce.com/s-tpv42kg/content/home/shipping2.png" alt="free-shiping.png" width="32" height="18">
+                            <a href="https://www.kitchenessentials.ca/shipping-returns">Free Shipping on Orders Over $75</a>
+                
+            </div>
+            <div class="top-custom-link">
+                <a href="https://www.verified-reviews.com/reviews/kitchenessentials.ca">Reviews </a>  
+                |
+                <a href="/brands/">Brands</a>
+                |   
+                <a href="/contact-us/">Contact Us </a>
+            </div>
+            
+        </nav>
+    </div> -->
+
+    <a href="#" class="mobileMenu-toggle" data-mobile-menu-toggle="menu">
+        <span class="mobileMenu-toggleIcon">Toggle menu</span>
+    </a>
+
+    <div class="head-container">
+
+        <div>
+            {{#if page_type '===' 'default'}}
+                <h1 class="header-logo header-logo--{{theme_settings.logo-position}}">
+                    {{> components/common/store-logo}}
+                </h1>
+            {{else}}
+                <div class="header-logo header-logo--{{theme_settings.logo-position}}">
+                    {{> components/common/store-logo}}
+                </div>
+            {{/if}}
+        </div>
+
+        <div class="navPages-container" id="menu" data-menu>
+            {{> aoc-components/components/common/navigation-menu}}
+        </div>
+
+        <div>{{> aoc-components/components/common/navigation}}</div>
+    </div>
+</header>
+
+<script>
+    $(window).scroll(function() {
+ 
+     if ($(this).scrollTop()>0)
+      {
+         $('.top-header').fadeOut();
+      }
+     else
+      {
+      $('.top-header').fadeIn();
+      }
+  });
+
+
+  window.onscroll = function() { myFunction() };
+
+var header = document.getElementById("myHeader");
+var sticky = header.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset > sticky) {
+    header.classList.add("sticky");
+  }  else {
+    header.classList.remove("sticky");
+  }
+}
+</script>
+
+
+
+{{{region name="header_bottom--global"}}}
+{{{region name="header_bottom"}}}

@@ -1,0 +1,39 @@
+{
+  "customLayouts": {
+    "product": {
+      "alternate-product.html":"/test-url/",
+      "product-new-mattress.html": "/green-tea-memory-foam-bed-mattres/"
+
+    },
+    "brand": {
+      "custom-brand.html": "/brands/custombrand/"
+    },
+    "page": {
+      "custom-track-order.html": "/track-order/",
+      "custom-support.html" : "/support/",
+      "custom-about-us.html" : "/about-us/",
+      "custom-mattress-care-setup.html" : "/mattress-care-setup/",
+      "custom-is-reviews.html" : "/reviews/",
+      "custom-faqs.html" : "/faqs/",
+      "custom-product-certification.html": "/product-certification/",
+      "custom-warranty-policy.html" : "/warranty-claim/",
+      "custom-categ.html": "/custom-categ/",
+      "custom-shipping-transit-chart-page.html": "/shipping-transit-chart/",
+      "custom-night-sleep-trial.html": "/sleep-trial/",
+      "IS-Truth.html": "/the-truth/",
+      "is-comparison.html": "/comparison/",
+      "icon-sleep-story.html":"/icon-sleep-story/",
+      "custom-fake-reviews.html": "/fake-reviews/",
+      "custom-testpage.html": "/support-page/",
+      "custom-privacy-policy.html": "/privacy-policy/",
+      "custom-green-tea-memory.html": "/product-page/"
+    },
+    "category": {
+      "custom-category.html": "/custom-category/"
+    }
+  },
+  "normalStoreUrl": "https://icon-sleep.com",
+  "port": "3000",
+  "username": "stencil",
+  "token": "1d7idid9jrptmq9dpcth3wbx98wt72"
+}

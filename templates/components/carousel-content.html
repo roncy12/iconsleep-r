@@ -1,0 +1,9 @@
+<div class="heroCarousel-content{{#unless show_background}} heroCarousel-content--empty{{/unless}}">
+    <!-- {{{heading}}} --> 
+    <!-- {{{text}}} -->
+    <span class="heroCarousel-title">Experience The <br/> Iconic Treatment</span>
+    <p class="heroCarousel-description">Shop for affordable, eco-friendly, and<br> unbelievably comfortable mattresses.</p>
+    {{#if button_text}}
+        <a href="{{url}}" aria-label="{{#if this.alt_text.length '!=' 0}}{{this.alt_text}}{{else}}{{lang 'carousel.slide_number' slide_number=(add @index 1)}}{{/if}}, {{button_text}}" class="heroCarousel-action button button--primary button--large">{{button_text}}</a>
+    {{/if}}
+</div>
