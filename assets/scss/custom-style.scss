@@ -3,8 +3,6 @@
 /**********HEADER**********/
 .header{
     box-shadow: 0 4px 20px -10px #222;
-    position: relative;
-
     .head-container {
         display: flex;
         width: 95%;
@@ -82,13 +80,30 @@
 } 
 // END OF HEADER SECTION
 
-// Position
-.sticky{
-    position: fixed;
+// sticky & unsticky
+@media (min-width:801px) {
+	
+	#myHeader{
+		width:100%;
+		&.sticky {
+			position: fixed;
+			border: 0;
+			top:0;
+			left:0;
+			width: 100%;
+			background: white;
+			border-bottom: 1px solid #aaa;	
+		}		
+		&.unsticky {
+			position: relative !important;
+			top:auto !important;
+			left:auto !important;
+		}
+
+	}
+	
 }
-.relative{
-    position: relative;
-}
+
 
 // BODY BANNER 
 body {
@@ -158,7 +173,22 @@ body {
             width: 25%;
         }
     }
-
 }
 
 
+// Homepage Section
+.us-banner-description{
+    @media screen  and (max-width: 1425px) { width: 90% !important; }
+    & p{font-size: 24px !important;
+    }
+}
+.banner-div1{
+    @media screen  and (max-width: 1280px) { background-size: unset !important; }  }
+
+.us-banner-description p br {
+    // @media only screen and (min-width: 120.063em) {  display: none; }
+   @media screen and (max-width: 1200px) {display: none !important; }
+   @media screen and (max-width: 576px) { display: none !important; }}
+
+.most-affordable-desc h2{color: $navyblue;font-size: 28px;}
+a.mattress-button-aff{background-color:#132448;color:#fff;text-decoration:none;padding:12px 40px;border-radius:5px;font-weight:700}

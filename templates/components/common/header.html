@@ -10,7 +10,7 @@
     {{/each}}
 </div>
 {{/if}}
-<header class="header" id="myHeader" role="banner">
+<header class="header" id="myHeader" role="banner" >
     <!-- <div class="top-header">
         <nav class="container">
             <div class="top-deals">
@@ -57,36 +57,6 @@
         <div>{{> aoc-components/components/common/navigation}}</div>
     </div>
 </header>
-
-<script>
-    $(window).scroll(function() {
- 
-     if ($(this).scrollTop()>0)
-      {
-         $('.top-header').fadeOut();
-      }
-     else
-      {
-      $('.top-header').fadeIn();
-      }
-  });
-
-
-  window.onscroll = function() { myFunction() };
-
-var header = document.getElementById("myHeader");
-var sticky = header.offsetTop;
-
-function myFunction() {
-  if (window.pageYOffset > sticky) {
-    header.classList.add("sticky");
-  }  else {
-    header.classList.remove("sticky");
-  }
-}
-</script>
-
-
 
 {{{region name="header_bottom--global"}}}
 {{{region name="header_bottom"}}}
