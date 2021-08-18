@@ -10,8 +10,10 @@
         margin: 0 auto;
         justify-content: space-between;
         padding: 1.5rem 0;
+        position: relative;
         @media(max-width: 801px){    
             display: flex;
+            position: unset;
             width: auto;
             margin: 0px auto;
             padding: 0rem 0px;
@@ -107,9 +109,9 @@
 
 // BODY BANNER 
 body {
-    padding-top: 0;
-    .body-home .body {
-        margin-top: 0;
+    
+    &.body-home .body {
+        // margin-top: 0;
     }   
     &.body-pages .body{
         @media (min-width: 801px){
@@ -121,24 +123,26 @@ body {
 .heroCarousel{
 	.heroCarousel-slide .heroCarousel-image {
 		object-fit: cover;
-	}		
+        // @media (max-width: 551px){ object-fit: contain;  }
+	}
+    @media (max-width: 551px){ margin-bottom: 0.5rem;}
 	.heroCarousel-content{
         text-align: left;
         width: 85%;
+
 		@media (min-width: 551px){
 		background-color: transparent;
 		* { color:#FFF;  font-weight: bold;  }
-		
 		.heroCarousel-title{  line-height: 1; font-size: 56px; color: #fff; font-weight: 400; text-transform: inherit; font-family: Almarai!important; } 
         .heroCarousel-description{ margin:8px 0 0 0; } 
-            .button--primary{
-                background: $white;
-                border: 1px solid $white;
-                color: $navsColor;
-                font-weight: bold;
-                border-radius: 5px;
-            }
+        .button--primary{background:$white;border:1px solid $white;color:$navsColor;font-weight:700;border-radius:5px}
 		}
+        @media (max-width: 551px){ text-align: center; width: 100%; padding: 3rem 1.5rem 3rem;
+            & .heroCarousel-title, & .heroCarousel-description{ color: $navyblue; font-size:18px;}
+            & .heroCarousel-title{font-size: 38px; line-height: 1; font-family: Almarai!important;}
+            & .heroCarousel-description{line-height: 1; margin-top: 1rem;}
+            & .heroCarousel-action{text-decoration:none;background:$navyblue;border:1px solid $navyblue; color:#fff;font-weight:700;border-radius:8px;padding: 25px 35px;}
+        }   
 	}
 }
 	
@@ -179,16 +183,24 @@ body {
 // Homepage Section
 .us-banner-description{
     @media screen  and (max-width: 1425px) { width: 90% !important; }
-    & p{font-size: 24px !important;
+    & h3{font-size: 24px !important;
     }
 }
 .banner-div1{
     @media screen  and (max-width: 1280px) { background-size: unset !important; }  }
-
+.usbanner-div img{
+    @media screen  and (max-width: 1200px) { object-fit: cover; object-position: left; }  
+}
 .us-banner-description p br {
     // @media only screen and (min-width: 120.063em) {  display: none; }
    @media screen and (max-width: 1200px) {display: none !important; }
    @media screen and (max-width: 576px) { display: none !important; }}
-
-.most-affordable-desc h2{color: $navyblue;font-size: 28px;}
+.banner-most-affordable{
+    @media screen  and (max-width: 1200px) {background-position: left !important;}
+    @media screen  and (max-width: 480px) {background: transparent !important; margin-top: 0!important;}
+}
+.most-affordable-desc{
+    @media screen  and (max-width: 480px) {text-align: center; width: 100% !important;}
+}
+.most-affordable-desc h2{color: $navyblue;font-size: 36px;font-family: 'Almarai';}
 a.mattress-button-aff{background-color:#132448;color:#fff;text-decoration:none;padding:12px 40px;border-radius:5px;font-weight:700}

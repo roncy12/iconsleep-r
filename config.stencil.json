@@ -2,7 +2,7 @@
   "customLayouts": {
     "product": {
       "alternate-product.html":"/test-url/",
-      "product-new-mattress.html": "/green-tea-memory-foam-bed-mattres/"
+      "green-tea-memory-foam-bed-mattres.html": "/green-tea-memory-foam-bed-mattres/"
 
     },
     "brand": {
