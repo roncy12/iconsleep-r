@@ -1,13 +1,14 @@
 .container.product-container{padding:0;margin:0;max-width:100%;width:100%}
 .productView{   display: block; width: 100%;}
+.container.product-container .productView .show .stamped-summary-actions { display: none !important;}
 
 @media (min-width: 801px){
 .productView-images {
-    width: 60%;
+    width: 65%;
 }
 .productView-details {
     clear: right;
     float: right;
-    width: 40%;
+    width: 35%;
 }
 }
