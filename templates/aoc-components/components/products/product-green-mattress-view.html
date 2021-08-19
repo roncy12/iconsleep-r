@@ -7,7 +7,6 @@
                 {{> components/common/alert/alert-success success}}
             {{/if}}
         {{/each}}
-        <h1 class="text-hide" style="background-image: url('/docs/4.0/assets/brand/bootstrap-solid.svg'); width: 50px; height: 50px;">Bootstrap</h1>
         <section class="productView-images" data-image-gallery>
             {{!--
                 Note that these image sizes are coupled to image sizes used in /assets/js/theme/common/product-details.js
@@ -73,9 +72,9 @@
     
         <section class="productView-details product-data">
             <div class="productView-product">
-                <h1 class="productView-title" {{#if schema}}itemprop="name"{{/if}}>{{product.title}}</h1>
+                <h1 class="productView-title" {{#if schema}}itemprop="name"{{/if}}><strong>{{product.title}}</strong></h1>
                 {{#if product.brand}}
-                    <h2 class="productView-brand"{{#if schema}} itemprop="brand" itemscope itemtype="http://schema.org/Brand"{{/if}}>
+                    <h2 style="display: none;" class="productView-brand"{{#if schema}} itemprop="brand" itemscope itemtype="http://schema.org/Brand"{{/if}}>
                         <a href="{{product.brand.url}}"{{#if schema}} itemprop="url"{{/if}}><span{{#if schema}} itemprop="name"{{/if}}>{{product.brand.name}}</span></a>
                     </h2>
                 {{/if}}
@@ -84,12 +83,11 @@
                 
                         $("#stamped-main-widget").hide();
                     
-                    $("#show").click(function(){
-                        $("#new-review-form_357").show();
-                        $(".show").toggle();
-                      });
-       
-                    });
+                        $("#show").click(function(){
+                            $(".show").toggle("fast");
+                        });
+        
+                        });
                     </script>
 
                 <div class="d-flex">
@@ -101,24 +99,33 @@
                 <div id="stamped-main-widget" class="show" data-widget-style="standard" data-product-id="{{ product.id }}" data-title="Customer Reviews" data-style-color-title="#2f2f2b" data-style-color-text="#2f2f2b" data-style-color-link="#2f2f2b" data-fill-empty="true" data-random="? string:Customer Reviews ?" data-product-image="true"></div>   
         
             
-            <div class="productView-description green-matt-desc" {{#if settings.data_tag_enabled}} data-event-type="product" {{/if}}>
+            <div style="padding: 0;" class="productView-description green-matt-desc" {{#if settings.data_tag_enabled}} data-event-type="product" {{/if}}>
                 {{{product.description}}}
                 {{{snippet 'product_description'}}}
             </div>
-
-                {{#if product.call_for_price}}
-                    <p class="productView-price">
-                        <span>{{product.call_for_price}}</span>
-                    </p>
-                {{/if}}
-                <div class="productView-price">
-                    {{#or customer (if theme_settings.restrict_to_login '!==' true)}}
-                        {{> components/products/price price=product.price schema_org=schema}}
-                    {{else}}
-                        {{> components/common/login-for-pricing}}
-                    {{/or}}
+            <div class="product-price-stock">
+                    <h3>Total Price: </h3>
+                    {{#if product.call_for_price}}
+                        <p class="productView-price">
+                            <span>{{product.call_for_price}}</span>
+                        </p>
+                    {{/if}}
+                    <div class="productView-price">
+                        {{#or customer (if theme_settings.restrict_to_login '!==' true)}}
+                            {{> components/products/price price=product.price schema_org=schema}}
+                        {{else}}
+                            {{> components/common/login-for-pricing}}
+                        {{/or}}
+                    </div>
+                    {{{region name="product_below_price"}}}
+                    <div class="form-field form-field--stock{{#unless product.stock_level}} u-hiddenVisually{{/unless}}">
+                        <label class="form-label form-label--alternate">
+                            IN STOCK
+                            <!-- {{lang 'products.current_stock'}} -->
+                            <span data-product-stock style="display: none;">{{product.stock_level}}</span>
+                        </label>
+                    </div>
                 </div>
-                {{{region name="product_below_price"}}}
                 <div class="productView-rating"{{#if product.num_reviews '>' 0}}{{#if schema}} itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating"{{/if}}{{/if}}>
                     {{#if settings.show_product_rating}}
                         {{#if product.num_reviews '>' 0}}
@@ -149,7 +156,7 @@
                     {{/if}}
                 </div>
                 {{product.detail_messages}}
-                <dl class="productView-info">
+                <dl class="productView-info" style="display: none;">
                     <dt class="productView-info-name sku-label"{{#unless product.sku}} style="display: none;"{{/unless}}>{{lang 'products.sku'}}</dt>
                     <dd class="productView-info-value" data-product-sku{{#if schema}} itemprop="sku"{{/if}}>{{product.sku}}</dd>
                     <dt class="productView-info-name upc-label"{{#unless product.upc}} style="display: none;"{{/unless}}>{{lang 'products.upc'}}</dt>
@@ -257,12 +264,7 @@
                             {{{dynamicComponent 'components/products/options'}}}
                         {{/each}}
                     </div>
-                    <div class="form-field form-field--stock{{#unless product.stock_level}} u-hiddenVisually{{/unless}}">
-                        <label class="form-label form-label--alternate">
-                            {{lang 'products.current_stock'}}
-                            <span data-product-stock>{{product.stock_level}}</span>
-                        </label>
-                    </div>
+
                     {{> components/products/add-to-cart}}
                     {{#if product.out_of_stock}}
                         {{#if product.out_of_stock_message}}
@@ -279,7 +281,7 @@
             {{> components/common/share url=product.url}}
         </section>
     
-        <article class="productView-description"{{#if schema}} itemprop="description"{{/if}}>
+        <article style="display:none;" class="productView-description"{{#if schema}} itemprop="description"{{/if}}>
             {{#if theme_settings.show_product_details_tabs}}
                 {{> components/products/description-tabs}}
             {{else}}
@@ -292,5 +294,28 @@
         {{> components/common/modal/modal-close-btn }}
         <div class="modal-content"></div>
         <div class="loadingOverlay"></div>
+    </div>
+    
+    <div class="flex-mattrees-section us" style="display: flex; flex-flow: row wrap; margin: 0 auto; width: 95%;">
+        <div class="col-md-6 col-sm-6 col-xs-6  usbanner-div" style="padding: 0; margin: 0;">
+            <img class="lazyload w-100 h-100" src="{{cdn 'https://cdn11.bigcommerce.com/s-z2qdisybty/product_images/uploaded_images/made-in-usa.png?t=1623908461'}}">
+        </div>
+        <div class="col-md-6 col-sm-6 col-xs-6 banner-div1" style="background: url({{cdn 'https://cdn11.bigcommerce.com/s-z2qdisybty/product_images/uploaded_images/banner-us-flash.png?t=1623735492'}});position: relative;padding: 0;background-repeat: no-repeat;background-size: cover; display: grid; place-items: center;">
+            <div class="us-banner-description" data-aos="fade-left" style="padding: 0;margin: 0;width: 80%;margin: 0 auto; ">
+                <h3 style="color:#fff; font-size: 28px;"><b>Proudly Made in the USA</b></h3>
+                <p style="font-size: 18px; color:#fff;"> Icon Sleep is a high-quality, trusted brand made, designed,<br> and established in the USA. Icon Sleep encourages everyone <br> to buy local and support our economy.</p>
+            </div>
+        </div>
+    </div> 
+    
+    
+    <div class="banner-most-affordable position-relative mx-auto mt-5" style="width: 95%; background: url({{cdn 'https://cdn11.bigcommerce.com/s-z2qdisybty/product_images/uploaded_images/affordable-usa-banner.png?t=1623736740'}}); background-size: cover;display: grid;place-items: flex-start;background-position: center;padding: 11% 0;">
+        <img class="lazyload position-relative mx-auto w-100" />
+        
+        <div class="most-affordable-desc" data-aos="fade-right" style="width: 95%; margin-left: auto;">
+            <h2> <span style="font-weight: 800;">Most Affordable</span><br> USA-Made <br>Mattress </h2>
+            <p >Jaw-dropping prices, same iconic experience. Starts at <span style="color:red;">$199</span> </p>        
+            <a href="/green-tea-memory-foam-bed-mattres/" class="mattress-button-aff animation-element invi bounce-in duration-1500 in-view">Shop Now</a>  
+        </div>
     </div>
     
