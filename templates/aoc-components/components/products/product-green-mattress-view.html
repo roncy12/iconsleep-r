@@ -109,20 +109,29 @@
 
                          $(".faqs-title").on('click', function(e) {
                             
+                        // $("#faqs-close").click(function(){
+                        //     $(".show").toggle("fast");
+                        // });   
+                        $("#faqs-close").toggle();
+                        $("#faqs-open").toggle();
+                        
+
                         var faqsdetailsDiv = $(event.currentTarget).next();
                         if ($(faqsdetailsDiv).hasClass('open')) {
                             $(faqsdetailsDiv).removeClass('open');
                             
                         } else {
                             $(faqsdetailsDiv).addClass('open');
-                            // $("#faqs-close").addClass('open');
-                            if($($(faqsdetailsDiv).hasClass('open') && $("faqs-close").is(":visible"))){
-                                $("#faqs-close").show();
-                                 $("#faqs-open").hide();
-                            }else{
-                                $("#faqs-close").hide();
-                                 $("#faqs-open").show();
-                            }
+                             $("#faqs-close").attr( 'id', 'open' );
+                             
+                            //  if($("#faqs-close").is(":visible")){
+                            //     $("#faqs-show").hide();
+                            //  }else if($("#faqs-open").is(":visible")){
+                            //     $("#faqs-close").hide();
+                            //  }else{
+                            //     $("#faqs-close").hide();
+                            //  }
+
 
                         }
 
@@ -130,17 +139,6 @@
                         return false;
                         });
 
-
-                        // $(".faqs-title").click(function(){
-                        //     $("#faqs-close").toggle();
-                        //     $("#faqs-open").toggle();
-
-                        //     if($("#faqs-open").is(":visible")){
-                        //         $("#faqs-close").show();
-                        //     }
-
-                        // });
-            
                         
                     });
 
