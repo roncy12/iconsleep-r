@@ -109,10 +109,11 @@
            
                 {{#if theme_settings.social_icon_placement_bottom}}
                     <h3 class="footer-info-heading">Connect</h3>
-                    <a class="like-us" href="https://www.facebook.com/IconSleepMattresses/">
-                    <img class="like-us-img" src="https://cdn11.bigcommerce.com/s-z2qdisybty/product_images/uploaded_images/fb.png?t=1623205504&_ga=2.146581108.1588106158.1623054117-1835193253.1617777202">
-                 Like us on Facebook
-                    </a>
+                    <div class="btn-a-con">
+                        <img class="like-us-img" src="https://cdn11.bigcommerce.com/s-z2qdisybty/product_images/uploaded_images/fb.png?t=1623205504&amp;_ga=2.146581108.1588106158.1623054117-1835193253.1617777202"><a class="like-us" href="https://www.facebook.com/IconSleepMattresses/">Like us on Facebook
+                        </a>
+                    </div>
+ 
                     {{> components/common/social-links}}
                 {{/if}}
              
@@ -140,9 +141,16 @@
                 </div>
             {{/if}}
         </div>
-        <div class="logo-footer">
+        <!-- <div class="logo-footer">
                 {{> components/common/payment-icons}}
-        </div> 
+        </div>  -->
+        <div>
+            {{#if theme_settings.show_copyright_footer}}
+                <div class="footer-copyright">
+                    <p class="powered-by">&copy; {{moment format="YYYY"}} {{settings.store_name}} </p>
+                </div>
+            {{/if}}
+        </div>
     </div>
 
     </div>

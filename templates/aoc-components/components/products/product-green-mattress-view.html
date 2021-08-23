@@ -81,18 +81,39 @@
                 <script>
                     $(document).ready(function(){
                 
-                        $("#stamped-main-widget").hide();
-                    
+                        $("#stamped-main-widget").hide();  
                         $("#show").click(function(){
                             $(".show").toggle("fast");
                         });
-        
+
+                        // OTHER DETAILS TOGGLE
+                        $("#details-close").hide();  
+                        $(".table-detail").hide();  
+
+                        $(".detail").click(function(){
+                            $("#details-close").toggle();
+                            $("#details-open").toggle();
+
+                           if($("#details-close").is(":visible")){
+                              $("#details-open").hide();  
+                              $(".table-detail").show(); 
+                              $(".detail").css({"border-bottom": "1px solid transparent"});
+                              $(".table-detail").css({"border-bottom": "1px solid #888", "padding-bottom": "1.5rem"}); 
+                           }
+                           if($("#details-open").is(":visible")){
+                              $("#details-close").hide();  
+                              $(".table-detail").hide();  
+                              $(".detail").css({"border-bottom": "1px solid #888"});
+                           }                     
+                         });
                         });
+
+                        
                     </script>
 
                 <div class="d-flex">
                     <div id="stamped-reviews-widget" class="grn-matt-stamp" style="display: inline-block;" data-widget-type="site-badge" data-badge-type="minimal" data-title="Verified Reviews" data-title-size="15" data-size-stars="12" data-element-id="2" data-lang="en">&nbsp; </div>
-                    <p tabindex="0" onclick="StampedFn.toggleForm('review','357');return false;"  id="show" style="font-size: 16px;text-decoration: underline;font-weight: 600;color: #333333;border-left: 1px solid black;padding-left: 1rem;margin-left: 1rem;height: 1.2em;border-left-style: outset; cursor: pointer;">Write a Review</p>
+                    <p tabindex="0" onclick="StampedFn.toggleForm('review','357');return false;"  id="show" style="font-size: 16px;text-decoration: underline;color: #333333;border-left: 1px solid #888;padding-left: 1rem;margin-left: 1rem;height: 1.1em;border-left-style: outset; cursor: pointer; margin-bottom: 0; color: #888;">Write a Review</p>
                     <!-- <span class="stamped-summary-actions-newreview" id="show" role="button" onclick="StampedFn.toggleForm('review','357');return false;" style="font-size: 16px;text-decoration: underline;font-weight: 600;color: #333333;border-left: 1px solid black;padding-left: 1rem;margin-left: 1rem;height: 1.2em;border-left-style: outset; cursor: pointer;"  tabindex="0">Write a Review</span> -->
                 </div>
                 
@@ -274,11 +295,53 @@
                         {{/if}}
                     {{/if}}
                 </form>
-                {{#if settings.show_wishlist}}
-                    {{> components/common/wishlist-dropdown}}
-                {{/if}}
+                <div style="display: none;">
+                    {{#if settings.show_wishlist}}
+                        {{> components/common/wishlist-dropdown}}
+                    {{/if}}
+                    {{> components/common/share url=product.url}}
+                </div>
+                <div class="prodview-shipping-details d-flex">
+                    <div class="w-50 text-center" style="border-right: 1px solid #888;"> 
+                        <p class="text-uppercase font-weight-normal mt-0 mb-0">Ships by:</p>
+                        <h5 class="mt-0 mb-0">{{moment "now" "MM/DD/YYYY"}}</h5>
+                    </div>
+                    <div class="w-50 text-center">
+                        <p class="text-uppercase font-weight-normal mt-0 mb-0">Delivery by:</p>
+                        <h5 class="text-capitalize mt-0 mb-0">Within 2-7 days*</h5>
+                    </div>
+                </div> 
+                <div class="learnmore-div">
+                    <p>*To learn more about shipping, check out our <a href="/shipping-transit-chart/" style="color:#00d2ff;"> Shipment Transit Chart.</a></p>
+                </div>
+
+                    <div class="detail d-flex justify-content-between w-100">
+                        <div class="w-50"><h5  style="color: #173456; margin: 0; "><b>OTHER DETAILS</b></h5> </div>
+                        <div class="w-50 d-flex justify-content-end"><img class="fas fa-plus s-plus" id="details-open" src="https://cdn11.bigcommerce.com/s-z2qdisybty/stencil/e8cdb500-dae8-0139-7f54-62e43660c985/e/db5cebc0-dd4b-0139-22f1-42ef4cd65610/img/prodpage/pllus-icon-img.png" aria-hidden="true">
+                        <img class="fas fa-times" id="details-close" src="https://cdn11.bigcommerce.com/s-z2qdisybty/product_images/uploaded_images/minus-square-outlined-button-1-.png?t=1626224949" aria-hidden="true">
+                        </div>
+                    </div>
+                    <div class="table-detail" style="padding: 0;">
+                        <div class="data-table" id="product-attribute-specs-table"> 
+                            <table style="width:100%">
+                            <div class="productView-info"> 
+                                <!-- {{#each product.custom_fields}} -->
+                         
+                                    <tr>
+                                    <div>
+                                        <td class="productView-info-name">{{name}}:</td>
+                                        <td class="productView-info-value">{{{value}}}</td>
+                                    </div>
+                                    </tr>
+                             
+                                <!-- {{/each}} -->
+                            </div>
+                        </table>
+                        </div>
+                    </div>
+
             </div>
-            {{> components/common/share url=product.url}}
+            
         </section>
     
         <article style="display:none;" class="productView-description"{{#if schema}} itemprop="description"{{/if}}>
@@ -296,6 +359,35 @@
         <div class="loadingOverlay"></div>
     </div>
     
+
+    <div class="green-matt-features">
+        <div>
+            <div class="grn-ftr-text">
+                <h2 class="font-weight-bold text-capitalize text-dark">Sleep Has Never Been This Rewarding</h2>
+                <p>Think of three words that best describe your green tea. Healthy. Refreshing. Natural. Thank you. Now infuse these properties with a CertiPUR-US® certified memory foam and you’re in for the most rewarding sleep you’ll ever have. </p>    
+            </div>
+    
+            <div class="matt-ftr-div row">
+                <div class="grn-matt-img">
+                    <img class="lazyload" src="{{cdn '/assets/img/prodpage/active-charcoal.png'}}" />
+                </div>
+                <div class="grn-matt-img">
+                    <img class="lazyload" src="{{cdn '/assets/img/prodpage/Compression-tech_icon.png'}}" />
+                </div>
+                <div class="grn-matt-img">
+                    <img class="lazyload" src="{{cdn '/assets/img/prodpage/Bio-Foam_icon.png'}}" />
+                </div>
+                 <div class="grn-matt-img">
+                     <img class="lazyload" src="{{cdn '/assets/img/prodpage/Evergreen_icon.png'}}" />
+                </div>
+                 <div class="grn-matt-img">
+                     <img class="lazyload" src="{{cdn '/assets/img/prodpage/SGS_icon.png'}}" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+
     <div class="flex-mattrees-section us" style="display: flex; flex-flow: row wrap; margin: 0 auto; width: 95%;">
         <div class="col-md-6 col-sm-6 col-xs-6  usbanner-div" style="padding: 0; margin: 0;">
             <img class="lazyload w-100 h-100" src="{{cdn 'https://cdn11.bigcommerce.com/s-z2qdisybty/product_images/uploaded_images/made-in-usa.png?t=1623908461'}}">
