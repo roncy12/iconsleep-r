@@ -106,7 +106,44 @@
                               $(".detail").css({"border-bottom": "1px solid #888"});
                            }                     
                          });
+
+                         $(".faqs-title").on('click', function(e) {
+                            
+                        var faqsdetailsDiv = $(event.currentTarget).next();
+                        if ($(faqsdetailsDiv).hasClass('open')) {
+                            $(faqsdetailsDiv).removeClass('open');
+                            
+                        } else {
+                            $(faqsdetailsDiv).addClass('open');
+                            // $("#faqs-close").addClass('open');
+                            if($($(faqsdetailsDiv).hasClass('open') && $("faqs-close").is(":visible"))){
+                                $("#faqs-close").show();
+                                 $("#faqs-open").hide();
+                            }else{
+                                $("#faqs-close").hide();
+                                 $("#faqs-open").show();
+                            }
+
+                        }
+
+                        event.preventDefault();
+                        return false;
                         });
+
+
+                        // $(".faqs-title").click(function(){
+                        //     $("#faqs-close").toggle();
+                        //     $("#faqs-open").toggle();
+
+                        //     if($("#faqs-open").is(":visible")){
+                        //         $("#faqs-close").show();
+                        //     }
+
+                        // });
+            
+                        
+                    });
+
 
                         
                     </script>
@@ -387,27 +424,180 @@
         </div>
     </div>
 
-
-    <div class="flex-mattrees-section us" style="display: flex; flex-flow: row wrap; margin: 0 auto; width: 95%;">
-        <div class="col-md-6 col-sm-6 col-xs-6  usbanner-div" style="padding: 0; margin: 0;">
-            <img class="lazyload w-100 h-100" src="{{cdn 'https://cdn11.bigcommerce.com/s-z2qdisybty/product_images/uploaded_images/made-in-usa.png?t=1623908461'}}">
+    <div class="sub-prodview-podimg green-matt-sub mt-5">
+        <div class="fade-in from-bounce-in duration-1500 in-view features-div-grn">
+            <img class="lazyload" src="{{cdn '/assets/img/prodpage/cooling.png'}}"/>
+            <h5>Cooling & Breathability</h5>
+            <p>The most advanced cooling and heat management technology we've ever put on a mattress.</p>
         </div>
-        <div class="col-md-6 col-sm-6 col-xs-6 banner-div1" style="background: url({{cdn 'https://cdn11.bigcommerce.com/s-z2qdisybty/product_images/uploaded_images/banner-us-flash.png?t=1623735492'}});position: relative;padding: 0;background-repeat: no-repeat;background-size: cover; display: grid; place-items: center;">
-            <div class="us-banner-description" data-aos="fade-left" style="padding: 0;margin: 0;width: 80%;margin: 0 auto; ">
-                <h3 style="color:#fff; font-size: 28px;"><b>Proudly Made in the USA</b></h3>
-                <p style="font-size: 18px; color:#fff;"> Icon Sleep is a high-quality, trusted brand made, designed,<br> and established in the USA. Icon Sleep encourages everyone <br> to buy local and support our economy.</p>
+        <div class="fade-in from-bounce-in duration-1500 delay-300 in-view features-div-grn">
+            <img class="lazyload" src="{{cdn '/assets/img/prodpage/spinal.png'}}"/>
+            <h5>Top-notch Spinal Support</h5>
+            <p>Engineered to provide outstanding durability, support, and pressure relief for sleepers of all sizes.</p>
+        </div>
+        <div class="fade-in from-bounce-in duration-1500 delay-600 in-view features-div-grn">
+            <img class="lazyload" src="{{cdn '/assets/img/prodpage/absorb.png'}}"/>
+            <h5 class="text">Motion Absorption & Isolation</h5>
+            <p>Say goodbye to motion-related sleep interruptions and enjoy greater sleep and better mornings.</p>
+        </div>
+    </div>
+
+    <div class="prodview-anatomy green-anatomy" style="margin-bottom: 5rem; display: flex;">
+        <div style="width:49%;" class="green-anatomy-div" >
+            <img class="lazyload position-relative w-100" src="{{cdn 'https://cdn11.bigcommerce.com/s-z2qdisybty/product_images/uploaded_images/mattress-anatomy-02.gif?t=1625799287'}}" />
+            <p style="color: #173456;">*for illustration only</p>
+        </div>
+        <div style="padding:0 5%; display: grid; place-content: center;" class="animation-element slide-right in-view">
+            <h4 style="color:#18253f; font-weight: 700; font-size: 28px; text-transform: inherit;" >Take A Closer Look.</h4>
+            <h4 style="color:#18253f; font-weight: bold; font-size: 28px; text-transform: inherit; margin-top: 0;" >An architecture that assures luxury.</h4>
+            <br>
+            <ul class="check-blue">
+                <li class="lazyload fade-in duration-1500 delay-00 in-view">Impossibly soft outer material for comfort overload</li>
+                <li class="lazyload fade-in duration-1500 delay-300 in-view">Certified inner cover for protection against fires</li>
+                <!--<li class="animation-element invi fade-in duration-1500 delay-600 in-view">Gel-infused memory foam for cooling and airflow</li>-->
+                <li class="lazyload fade-in duration-1500 delay-900 in-view">Dual layers of high-performance foams for pressure relief and weight absorption</li>
+                <li class="lazyload fade-in duration-1500 delay-1200 in-view">Dedicated comfort layer for that distinct lavish feel</li>
+                <li class="lazyload fade-in duration-1500 delay-1500 in-view">Durable base for overall support</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="prodview-sizechart green-matt mt-5">
+        <h3 class="text-center text-light font-weight-bold">Size Comparison</h3>
+        <p class="text-center text-light">Worried your bed won't fit? Check out our size chart.</p>
+        <div class="prodview-sizechart-img green-mattress-chart">
+            <div>
+                <img class="lazyload slide-in from-slide-up duration-1500 delay-00 in-view" src="{{cdn '/assets/img/prodpage/green-matt-twin.png'}}" />
+            </div>
+            <div>
+                <img class="lazyload slide-in from-slide-up duration-1500 delay-300 in-view" src="{{cdn '/assets/img/prodpage/green-matt-twin-xl.png'}}" />
+            </div>
+            <div>
+                <img class="lazyload slide-in from-slide-up duration-1500 delay-600 in-view" src="{{cdn '/assets/img/prodpage/green-matt-full.png'}}" />
+            </div>
+            <div>
+                <img class="lazyload slide-in from-slide-up duration-1500 delay-900 in-view" src="{{cdn '/assets/img/prodpage/gm-short-queen.png'}}" />
+            </div>
+            <div>
+                <img class="lazyload slide-in from-slide-up duration-1500 delay-1200 in-view" src="{{cdn '/assets/img/prodpage/gm-queen.png'}}" />
+            </div>
+            <div>
+                <img class="lazyload slide-in from-slide-up duration-1500 delay-600 in-view" src="{{cdn '/assets/img/prodpage/gm-king.png'}}" />
+            </div>
+            <div>
+                <img class="lazyload slide-in from-slide-up duration-1500 delay-1800 in-view" src="{{cdn '/assets/img/prodpage/gm-cal-king.png'}}" />
             </div>
         </div>
-    </div> 
-    
-    
-    <div class="banner-most-affordable position-relative mx-auto mt-5" style="width: 95%; background: url({{cdn 'https://cdn11.bigcommerce.com/s-z2qdisybty/product_images/uploaded_images/affordable-usa-banner.png?t=1623736740'}}); background-size: cover;display: grid;place-items: flex-start;background-position: center;padding: 11% 0;">
-        <img class="lazyload position-relative mx-auto w-100" />
-        
-        <div class="most-affordable-desc" data-aos="fade-right" style="width: 95%; margin-left: auto;">
-            <h2> <span style="font-weight: 800;">Most Affordable</span><br> USA-Made <br>Mattress </h2>
-            <p >Jaw-dropping prices, same iconic experience. Starts at <span style="color:red;">$199</span> </p>        
-            <a href="/green-tea-memory-foam-bed-mattres/" class="mattress-button-aff animation-element invi bounce-in duration-1500 in-view">Shop Now</a>  
+    </div>
+
+    <div class="prodview-advantage green-mattress-ques">
+        <h3 class="text-center">Want to sleep a little longer?</h3>
+        <p class="text-center w-75 mx-auto">If you want to indulge in long, deep slumbers, our Green Tea mattresses are pretty much willing to do the job.</p>
+          <div class="prodview-advantage-con">
+            <div>
+                <img class="lazyload" src="{{cdn '/assets/img/prodpage/mattress-ques-img.png'}}" />
+                <h4>Sleep without interruptions</h4>
+                <p>Eliminate your sleeping problems with Green Tea’s No Motion Transfer feature that allows you to sleep longer without annoying breaks in between your dreams.</p>
+            </div>
+            <div>
+                <img class="lazyload" src="{{cdn '/assets/img/prodpage/mattress-ques-img1.png'}}" />
+                <h4>Top-notch comfort all night long</h4>
+                <p>Experience pressure relief from aches and pains with Green Tea’s multi-layer architecture that provides excellent spinal support and extra comfort all night long.</p>
+            </div>
+            <div>
+                <img class="lazyload" src="{{cdn '/assets/img/prodpage/mattress-ques-img2.png'}}" />
+                <h4>Long-lasting mattress</h4>
+                <p>Green Tea mattresses are designed to last for years thanks to its extremely durable foam layers and all-natural tea extracts that help maintain freshness.</p>
+            </div>
         </div>
     </div>
     
+    <div class="product-review-section greenh2" style="">
+        <h2  class="text-center">Share Your Green Tea Mattress Story</h2>
+      <span class="text-center d-block" style="color: #174567; font-size: 18px; margin-bottom: 5em;">See why customers love LUXE or write a Review</span>
+      <div class="review-stamped mx-auto" style="width: 85%;">        
+          <div id="stamped-reviews-widget" data-widget-type="carousel" data-product-id="{{ product.id }}" data-auto-play="true" data-auto-play-speed="10000" data-fill-empty="true" data-title="Authentic Reviews From Real Customers" data-random="? string:Authentic reviews from real customers. ?"></div>
+              </div>
+      </div>    
+  </div>
+
+  <div class="FAQS-categ green-faq-categ mt-5">
+    <div class="faqs-content">
+        
+        <h4 style="text-align: center; color: #fff;">Frequently Asked Questions</h4>
+        <p style="text-align: center; color: #fff;">See why customers love LUXE or write a Review</p>
+        <div class="faqs-desc">
+            <input id="faqs-btn" type="checkbox">
+            <label class="terms-showMore prod-show" for="_1">  What's the best mattress size for me? <i class="fas fa-plus" id="add"></i><img class="fas fa-times" id="close" src="{{cdn 'https://cdn11.bigcommerce.com/s-z2qdisybty/product_images/uploaded_images/minus-sign-icon.png?t=1624521698'}}" />
+            </label>
+            <div class="show-content">
+                <p>Choosing the right mattress size depends on several factors. Are you sharing your bed with a partner or pets? Do you like having plenty of living space in your bedroom? How do you want your bed to be placed? Breaking down these details will help you pick the right size that fits your preferences.</p>
+            </div>
+    
+            <input id="faqs-btn" type="checkbox"> <label class="terms-showMore prod-show" for="_2"> What type of foundation should I use for my mattress? 
+                <i class="fas fa-plus" id="add"></i>
+            <img class="fas fa-times" id="close" src="{{cdn 'https://cdn11.bigcommerce.com/s-z2qdisybty/product_images/uploaded_images/minus-sign-icon.png?t=1624521698'}}" />
+            </label>
+            <div class="show-content">
+                <p>Our mattresses can work with almost all standard foundations. The harder and sturdier the base, the better the mattress will perform, as with all foam beds. Platform bases offer the most support, but steel or wooden slatted foundations are also great options. If you want to improvise, adding a piece of plywood atop the base can give additional support.</p>
+            </div>
+
+            <input id="faqs-btn" type="checkbox"> <label class="terms-showMore prod-show" for="_3"> How long should I wait before I can use my mattress?
+                <i class="fas fa-plus" id="add"></i>
+                <img class="fas fa-times" id="close" src="{{cdn 'https://cdn11.bigcommerce.com/s-z2qdisybty/product_images/uploaded_images/minus-sign-icon.png?t=1624521698'}}" /></label>
+            <div class="show-content">
+               <p>You may start using it right out of the box! Take note, however, that it would take 48 hours up to a week for your mattress to fully decompress. Sleeping on your mattress can help with the decompression. To know more about setting up and mattress care, read this <a href="/mattress-care-setup/" style="text-align: center; color: #00d2ff;">Guide</a>.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div id="faqs_container">
+    <div class="faqs-title">
+      <div><h5>What's the best mattress size for me? </h5></div>
+      <div>
+        <i class="fas fa-plus" id="faqs-open"></i>
+        <img class="fas fa-times" id="faqs-close" src="{{cdn 'https://cdn11.bigcommerce.com/s-z2qdisybty/product_images/uploaded_images/minus-sign-icon.png?t=1624521698'}}" />
+      </div>
+    </div>
+    <div class="faq-details">
+      <div> 
+        <p>Choosing the right mattress size depends on several factors. Are you sharing your bed with a partner or pets? Do you like having plenty of living space in your bedroom? How do you want your bed to be placed? Breaking down these details will help you pick the right size that fits your preferences.</p>
+      </div>
+    </div>
+  </div>
+  
+  <div id="faqs_container">
+    <div class="faqs-title">
+      <div>
+          <h5>What type of foundation should I use for my mattress? </h5>
+      </div>
+      <div>
+        <i class="fas fa-plus" id="faqs-open"></i>
+        <img class="fas fa-times" id="faqs-close" src="{{cdn 'https://cdn11.bigcommerce.com/s-z2qdisybty/product_images/uploaded_images/minus-sign-icon.png?t=1624521698'}}" />
+      </div>
+    </div>
+    <div class="faq-details">
+      <div> 
+        <p>Our mattresses can work with almost all standard foundations. The harder and sturdier the base, the better the mattress will perform, as with all foam beds. Platform bases offer the most support, but steel or wooden slatted foundations are also great options. If you want to improvise, adding a piece of plywood atop the base can give additional support.</p>
+      </div>
+    </div>
+  </div>
+  
+  <div id="faqs_container">
+    <div class="faqs-title">
+      <div><h5>How long should I wait before I can use my mattress?</h5>
+      </div>
+      <div>
+        <i class="fas fa-plus" id="faqs-open"></i>
+        <img class="fas fa-times" id="faqs-close" src="{{cdn 'https://cdn11.bigcommerce.com/s-z2qdisybty/product_images/uploaded_images/minus-sign-icon.png?t=1624521698'}}" />
+      </div>
+    </div>
+    <div class="faq-details">
+      <div> 
+        <p>You may start using it right out of the box! Take note, however, that it would take 48 hours up to a week for your mattress to fully decompress. Sleeping on your mattress can help with the decompression. To know more about setting up and mattress care, read this <a href="/mattress-care-setup/" style="text-align: center; color: #00d2ff;">Guide</a>.</p>
+      </div>
+    </div>
+  </div>
+

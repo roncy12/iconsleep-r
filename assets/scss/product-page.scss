@@ -72,8 +72,8 @@ div#add-to-cart-wrapper {display:flex;align-items:center}
 .productView-details.product-data #stamped-badge-total, .productView-details.product-data #stamped-badge-title, .productView-details.product-data  #stamped-summary-actions-newreview {color: #888 !important;}
 .detail.d-flex{border-top:1px solid #888;border-bottom:1px solid #888;padding:1.5rem 0}
 img#details-close { height: 1.3rem; image-rendering: -webkit-optimize-contrast;}
-// OTHER DETAIL TABLE
 
+// OTHER DETAIL TABLE
 .table-detail td.productView-info-name{border:1px solid #888;padding:20px;text-align:left;width:50%;font-weight:600}
 .table-detail table { border: 1px solid #888;}
 .table-detail table tr {border: 1px solid #888;}
@@ -87,3 +87,113 @@ td.productView-info-value {padding: 5px 12px;}
 .grn-ftr-text{text-align:center;max-width:80%;margin:0 auto;font-size:18px}
 .green-matt-features{background:#e2e8ed;width:100%;display:grid;place-content:center;place-items:center;justify-content:center;margin-top:0;padding:2rem 0}
 .grn-matt-img{padding:12px}
+.matt-ftr-div.row{max-width:85%;margin:0 auto;flex-flow:row wrap;justify-content:center}
+.grn-ftr-text{text-align:center;max-width:80%;margin:0 auto;font-size:18px}
+.green-matt-features{background:#e2e8ed;width:100%;display:grid;place-content:center;place-items:center;justify-content:center;margin-top:0;padding:2rem 0}
+.grn-matt-img{padding: 12px}
+.prodview-sizechart-img.green-mattress-chart{width:80%;padding:50px 0;display:block;text-align:center;display:-ms-flexbox;display:flex;margin:0 auto;-ms-flex-pack:center;justify-content:center}
+.prodview-sizechart.green-matt {
+    background: url(https://cdn11.bigcommerce.com/s-z2qdisybty/product_images/uploaded_images/is-parallax-pattern.png?t=1623642972&_ga=2.224919322.1496872644.1623634006-1835193253.1617777202);
+    background-repeat: no-repeat;
+    height: auto;
+    width: 100%;
+    background-size: cover;
+    position: relative;
+    margin-bottom: 3%;
+    background-attachment: fixed;
+    transform-style: preserve-3d;
+    perspective: 1px;
+    padding: 50px;
+}
+.sub-prodview-podimg.green-matt-sub {
+    width: 90%;
+    padding: 50px 0;
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+}
+.sub-prodview-podimg div{
+    width: 29%;
+    margin: 0 1.5%;
+    display: inline-block;
+}
+@media (max-width: 800px){
+.prodview-sizechart-img.green-mattress-chart{
+    flex-flow: row wrap;
+}
+}
+
+.prodview-advantage-con {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 75%;
+    margin: 0 auto;
+    grid-gap: 20px;
+}
+
+.FAQS-categ.green-faq-categ {
+    background: #132448;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 70px;
+}
+.faqs-content h4, .faqs-content p{
+    color: #fff;
+    text-align: center;
+}
+.faqs-desc div p {
+    text-align: left;
+}
+
+input[type=checkbox]+label, input[type=radio]+label {
+    display: flex;
+    margin-left: .75rem;
+    margin-right: 1.5rem;
+    margin-bottom: 0;
+    vertical-align: baseline;
+    justify-content: space-between;
+}
+
+.faqs-content {
+    text-align: center;
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+input + .terms-showMore.prod-show {
+    color: #fff;
+}
+.faqs-desc {
+    text-align: left;
+    width: 60%;
+    margin: 0 2.5%;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.faq-details {
+    display: none;
+  }
+  
+  .faq-details.open {
+    display: block;
+  }
+
+  i#add {
+    color: #00d2ff;
+}
+
+.faqs-title {
+    display: flex;
+    justify-content: space-between;
+}
+
+// #faqs-close{
+//     display: none;
+// }
+
+// #faqs-close.open{
+//     display: block;
+// }

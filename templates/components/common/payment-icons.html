@@ -2,19 +2,19 @@
     {{#or show_accept_amex show_accept_discover show_accept_mastercard show_accept_paypal show_accept_visa show_accept_amazonpay show_accept_googlepay show_accept_klarna}}
     <div class="footer-payment-icons">
         {{#if show_accept_amex}}
-        <svg class="footer-payment-icon"><use xlink:href="#icon-logo-american-express"></use></svg>
+        <img class="lazyload" src="{{cdn 'img/loading.svg'}}" data-src="https://cdn11.bigcommerce.com/s-z2qdisybty/product_images/uploaded_images/amex.png?t=1626914754&_gl=1*qsr409*_ga*MTgzNTE5MzI1My4xNjE3Nzc3MjAy*_ga_WS2VZYPC6G*MTYyNjkxMzg1MS40MC4xLjE2MjY5MTQ3NTUuNjA." alt="payment-1">
         {{/if}}
         {{#if show_accept_discover}}
         <svg class="footer-payment-icon"><use xlink:href="#icon-logo-discover"></use></svg>
         {{/if}}
         {{#if show_accept_mastercard}}
-        <svg class="footer-payment-icon"><use xlink:href="#icon-logo-mastercard"></use></svg>
+        <img class="lazyload" src="{{cdn 'img/loading.svg'}}" data-src="https://cdn11.bigcommerce.com/s-z2qdisybty/product_images/uploaded_images/mastercard.png?t=1626914755" alt="payment-2">
         {{/if}}
         {{#if show_accept_paypal}}
-        <svg class="footer-payment-icon"><use xlink:href="#icon-logo-paypal"></use></svg>
+        <img class="lazyload" src="{{cdn 'img/loading.svg'}}" data-src="https://cdn11.bigcommerce.com/s-z2qdisybty/product_images/uploaded_images/paypal.png?t=1626914757" alt="payment-3">
         {{/if}}
         {{#if show_accept_visa}}
-        <svg class="footer-payment-icon"><use xlink:href="#icon-logo-visa"></use></svg>
+        <img class="lazyload" src="{{cdn 'img/loading.svg'}}" data-src="https://cdn11.bigcommerce.com/s-z2qdisybty/product_images/uploaded_images/visa.png?t=1626914756&_gl=1*rtrz8t*_ga*MTgzNTE5MzI1My4xNjE3Nzc3MjAy*_ga_WS2VZYPC6G*MTYyNjkxMzg1MS40MC4xLjE2MjY5MTQ3NTUuNjA." alt="payment-4">
         {{/if}}
         {{#if show_accept_amazonpay}}
         <svg class="footer-payment-icon"><use xlink:href="#icon-logo-amazonpay"></use></svg>
