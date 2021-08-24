@@ -130,35 +130,25 @@ td.productView-info-value {padding: 5px 12px;}
     margin: 0 auto;
     grid-gap: 20px;
 }
-// @media screen and (max-width: 1023px) {
-// 	.header .logo_search_cart .navUser-section--alt {
-// 		right: 2%;
-// 		top: 35%;
-// 		transform: translateY(-50%);
-// 	}
-// 	.header .mobileMenu-toggle{
-// 		margin-top:0 !important;
-// 		top:50%;
-// 		transform: translateY(-50%);
-//         display: inline-block;
-	
-// 	}
 
-// }
 .FAQS-categ.green-faq-categ {
     background: #132448;
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    padding: 70px;
-    
-        .faqs-content h4, .faqs-content p{
-            color: #fff;
-            text-align: left;
-        }
-
+    div#faqaccordion {
+        background: #132448;
+        
         .myaccordion .card-header i.fa.fa-plus, i.fa.fa-minus {
             color: #00d2ff;
+        }
+        .myaccordion{
+            div#faqaccordion {
+                background: #132448;
+            }
+            @media screen and (max-width: 1425px){
+                width: 75% !important;
+            } 
+            @media screen and (max-width: 991px){
+                width: auto !important;
+            } 
         }
         .myaccordion  .card-header {
             padding: 0 1.25rem;
@@ -175,14 +165,5 @@ td.productView-info-value {padding: 5px 12px;}
         .myaccordion .card-header  .fa-lg {
             font-size: 1em;
         }
+    }
 }
-
-// header .head-container .navPages-container.is-open {
-//     display: block;
-//     padding-top: 55px;
-//     z-index: 0;
-
-// }
-// .header .head-container .navPages-container {
-//    display: none;
-// }
