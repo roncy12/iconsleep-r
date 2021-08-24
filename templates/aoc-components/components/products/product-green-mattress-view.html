@@ -517,7 +517,7 @@
     <div class="faqs-content">
         <h4 style="text-align: center; color: #fff;"><strong>Frequently Asked Questions</strong></h4>
         <p style="text-align: center; color: #fff; font-size: 18px;">See why customers love LUXE or write a Review</p>
-            <div id="accordion" class="myaccordion w-50 mx-auto">
+            <div id="faqaccordion" class="myaccordion w-50 mx-auto">
                     <div class="card mb-0">
                     <div class="card-header px-0" id="headingOne">
                         <h2 class="m-0">
@@ -566,7 +566,7 @@
 
 
 <script>
-  $("#accordion").on("hide.bs.collapse show.bs.collapse", e => {
+  $("#faqaccordion").on("hide.bs.collapse show.bs.collapse", e => {
   $(e.target)
     .prev()
     .find("i:last-child")

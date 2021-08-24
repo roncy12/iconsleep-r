@@ -130,89 +130,59 @@ td.productView-info-value {padding: 5px 12px;}
     margin: 0 auto;
     grid-gap: 20px;
 }
+// @media screen and (max-width: 1023px) {
+// 	.header .logo_search_cart .navUser-section--alt {
+// 		right: 2%;
+// 		top: 35%;
+// 		transform: translateY(-50%);
+// 	}
+// 	.header .mobileMenu-toggle{
+// 		margin-top:0 !important;
+// 		top:50%;
+// 		transform: translateY(-50%);
+//         display: inline-block;
+	
+// 	}
 
+// }
 .FAQS-categ.green-faq-categ {
     background: #132448;
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     padding: 70px;
+    
+        .faqs-content h4, .faqs-content p{
+            color: #fff;
+            text-align: left;
+        }
+
+        .myaccordion .card-header i.fa.fa-plus, i.fa.fa-minus {
+            color: #00d2ff;
+        }
+        .myaccordion  .card-header {
+            padding: 0 1.25rem;
+            margin-bottom: 0;
+            border-bottom: transparent;
+            background-color: transparent;
+        }
+
+        .myaccordion .card{
+            border: 1px solid transparent;
+            border-bottom: 1px solid $white;
+            padding-bottom: 3px;
+        }
+        .myaccordion .card-header  .fa-lg {
+            font-size: 1em;
+        }
 }
-.faqs-content h4, .faqs-content p{
-    color: #fff;
-    text-align: left;
-}
-.faqs-desc div p {
-    text-align: left;
-}
 
-// input[type=checkbox]+label, input[type=radio]+label {
-//     display: flex;
-//     margin-left: .75rem;
-//     margin-right: 1.5rem;
-//     margin-bottom: 0;
-//     vertical-align: baseline;
-//     justify-content: space-between;
-// }
-
-// .faqs-content {
-//     text-align: center;
-//     width: 80%;
-//     margin: 0 auto;
-//     padding: 20px 0;
-// }
-
-// input + .terms-showMore.prod-show {
-//     color: #fff;
-// }
-// .faqs-desc {
-//     text-align: left;
-//     width: 60%;
-//     margin: 0 2.5%;
-//     display: inline-block;
-//     vertical-align: top;
-// }
-
-// .faq-details {
-//     display: none;
-//   }
-  
-//   .faq-details.open {
+// header .head-container .navPages-container.is-open {
 //     display: block;
-//   }
+//     padding-top: 55px;
+//     z-index: 0;
 
-//   i#add {
-//     color: #00d2ff;
 // }
-
-// .faqs-title {
-//     display: flex;
-//     justify-content: space-between;
+// .header .head-container .navPages-container {
+//    display: none;
 // }
-
-// #faqs-close{
-//     display: none;
-// }
-
-// #faqs-close#open{
-//     display: block;
-// }
-
-.myaccordion .card-header i.fa.fa-plus, i.fa.fa-minus {
-    color: #00d2ff;
-}
-.myaccordion  .card-header {
-    padding: 0 1.25rem;
-    margin-bottom: 0;
-    border-bottom: transparent;
-    background-color: transparent;
-}
-
-.myaccordion .card{
-    border: 1px solid transparent;
-    border-bottom: 1px solid $white;
-    padding-bottom: 3px;
-}
-.myaccordion .card-header  .fa-lg {
-    font-size: 1em;
-}
