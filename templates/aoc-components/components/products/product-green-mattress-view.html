@@ -107,14 +107,10 @@
                            }                     
                          });
 
-                         $(".faqs-title").on('click', function(e) {
-                            
-                        // $("#faqs-close").click(function(){
-                        //     $(".show").toggle("fast");
-                        // });   
+                        $(".faqs-title").on('click', function(e) {
+                        
                         $("#faqs-close").toggle();
                         $("#faqs-open").toggle();
-                        
 
                         var faqsdetailsDiv = $(event.currentTarget).next();
                         if ($(faqsdetailsDiv).hasClass('open')) {
@@ -123,17 +119,15 @@
                         } else {
                             $(faqsdetailsDiv).addClass('open');
                              $("#faqs-close").attr( 'id', 'open' );
+                             $("#faqs-close").addClass('open');
                              
-                            //  if($("#faqs-close").is(":visible")){
-                            //     $("#faqs-show").hide();
-                            //  }else if($("#faqs-open").is(":visible")){
-                            //     $("#faqs-close").hide();
-                            //  }else{
-                            //     $("#faqs-close").hide();
-                            //  }
-
-
+                        if($("#faqs-close").hasClass('open')){
+                                $("#faqs-show").hide();
+ 
                         }
+                        }
+
+
 
                         event.preventDefault();
                         return false;
@@ -519,83 +513,65 @@
       </div>    
   </div>
 
-  <div class="FAQS-categ green-faq-categ mt-5">
+<div class="FAQS-categ green-faq-categ mt-5">
     <div class="faqs-content">
-        
-        <h4 style="text-align: center; color: #fff;">Frequently Asked Questions</h4>
-        <p style="text-align: center; color: #fff;">See why customers love LUXE or write a Review</p>
-        <div class="faqs-desc">
-            <input id="faqs-btn" type="checkbox">
-            <label class="terms-showMore prod-show" for="_1">  What's the best mattress size for me? <i class="fas fa-plus" id="add"></i><img class="fas fa-times" id="close" src="{{cdn 'https://cdn11.bigcommerce.com/s-z2qdisybty/product_images/uploaded_images/minus-sign-icon.png?t=1624521698'}}" />
-            </label>
-            <div class="show-content">
-                <p>Choosing the right mattress size depends on several factors. Are you sharing your bed with a partner or pets? Do you like having plenty of living space in your bedroom? How do you want your bed to be placed? Breaking down these details will help you pick the right size that fits your preferences.</p>
+        <h4 style="text-align: center; color: #fff;"><strong>Frequently Asked Questions</strong></h4>
+        <p style="text-align: center; color: #fff; font-size: 18px;">See why customers love LUXE or write a Review</p>
+            <div id="accordion" class="myaccordion w-50 mx-auto">
+                    <div class="card mb-0">
+                    <div class="card-header px-0" id="headingOne">
+                        <h2 class="m-0">
+                        <button class="d-flex align-items-center text-light justify-content-between btn btn-link collapsed w-100 px-2" data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                            <span style="font-size: 18px; font-weight: 500;">What's the best mattress size for me?</span><span class="fa-stack fa-lg"> <i class="fa fa-plus"></i></span>
+                        </button>
+                        </h2>
+                    </div>
+                    <div id="collapseOne" class="collapse" aria-labelledby="headingOne">
+                        <div class="card-body">
+                            <p class="px-2">Choosing the right mattress size depends on several factors. Are you sharing your bed with a partner or pets? Do you like having plenty of living space in your bedroom? How do you want your bed to be placed? Breaking down these details will help you pick the right size that fits your preferences.</p>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="card mb-0">
+                    <div class="card-header px-0" id="headingTwo">
+                        <h2 class="m-0">
+                        <button class="d-flex align-items-center justify-content-between text-light btn btn-link collapsed w-100 px-2" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                            <span style="font-size: 18px; font-weight: 500;">What type of foundation should I use for my mattress? </span><span class="fa-stack fa-lg"><i class="fa fa-plus"></i></span>
+                        </button>
+                        </h2>
+                    </div>
+                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo">
+                        <div class="card-body">
+                            <p class="px-2">Our mattresses can work with almost all standard foundations. The harder and sturdier the base, the better the mattress will perform, as with all foam beds. Platform bases offer the most support, but steel or wooden slatted foundations are also great options. If you want to improvise, adding a piece of plywood atop the base can give additional support.</p>
+                        </div>
+                    </div>
+                    </div>
+                    <div class="card mb-0" >
+                    <div class="card-header px-0" id="headingThree">
+                        <h2 class="m-0">
+                        <button class="d-flex align-items-center justify-content-between text-light btn btn-link collapsed w-100 px-2" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                            <span style="font-size: 18px; font-weight: 500;">How long should I wait before I can use my mattress?</span><span class="fa-stack  fa-lg"><i class="fa fa-plus"></i></span>
+                        </button>
+                        </h2>
+                    </div>
+                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree">
+                        <div class="card-body">
+                            <p class="px-2">You may start using it right out of the box! Take note, however, that it would take 48 hours up to a week for your mattress to fully decompress. Sleeping on your mattress can help with the decompression. To know more about setting up and mattress care, read this <a href="/mattress-care-setup/" style="text-align: center; color: #00d2ff;">Guide</a>.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-    
-            <input id="faqs-btn" type="checkbox"> <label class="terms-showMore prod-show" for="_2"> What type of foundation should I use for my mattress? 
-                <i class="fas fa-plus" id="add"></i>
-            <img class="fas fa-times" id="close" src="{{cdn 'https://cdn11.bigcommerce.com/s-z2qdisybty/product_images/uploaded_images/minus-sign-icon.png?t=1624521698'}}" />
-            </label>
-            <div class="show-content">
-                <p>Our mattresses can work with almost all standard foundations. The harder and sturdier the base, the better the mattress will perform, as with all foam beds. Platform bases offer the most support, but steel or wooden slatted foundations are also great options. If you want to improvise, adding a piece of plywood atop the base can give additional support.</p>
-            </div>
-
-            <input id="faqs-btn" type="checkbox"> <label class="terms-showMore prod-show" for="_3"> How long should I wait before I can use my mattress?
-                <i class="fas fa-plus" id="add"></i>
-                <img class="fas fa-times" id="close" src="{{cdn 'https://cdn11.bigcommerce.com/s-z2qdisybty/product_images/uploaded_images/minus-sign-icon.png?t=1624521698'}}" /></label>
-            <div class="show-content">
-               <p>You may start using it right out of the box! Take note, however, that it would take 48 hours up to a week for your mattress to fully decompress. Sleeping on your mattress can help with the decompression. To know more about setting up and mattress care, read this <a href="/mattress-care-setup/" style="text-align: center; color: #00d2ff;">Guide</a>.</p>
-            </div>
-        </div>
     </div>
 </div>
 
 
-<div id="faqs_container">
-    <div class="faqs-title">
-      <div><h5>What's the best mattress size for me? </h5></div>
-      <div>
-        <i class="fas fa-plus" id="faqs-open"></i>
-        <img class="fas fa-times" id="faqs-close" src="{{cdn 'https://cdn11.bigcommerce.com/s-z2qdisybty/product_images/uploaded_images/minus-sign-icon.png?t=1624521698'}}" />
-      </div>
-    </div>
-    <div class="faq-details">
-      <div> 
-        <p>Choosing the right mattress size depends on several factors. Are you sharing your bed with a partner or pets? Do you like having plenty of living space in your bedroom? How do you want your bed to be placed? Breaking down these details will help you pick the right size that fits your preferences.</p>
-      </div>
-    </div>
-  </div>
-  
-  <div id="faqs_container">
-    <div class="faqs-title">
-      <div>
-          <h5>What type of foundation should I use for my mattress? </h5>
-      </div>
-      <div>
-        <i class="fas fa-plus" id="faqs-open"></i>
-        <img class="fas fa-times" id="faqs-close" src="{{cdn 'https://cdn11.bigcommerce.com/s-z2qdisybty/product_images/uploaded_images/minus-sign-icon.png?t=1624521698'}}" />
-      </div>
-    </div>
-    <div class="faq-details">
-      <div> 
-        <p>Our mattresses can work with almost all standard foundations. The harder and sturdier the base, the better the mattress will perform, as with all foam beds. Platform bases offer the most support, but steel or wooden slatted foundations are also great options. If you want to improvise, adding a piece of plywood atop the base can give additional support.</p>
-      </div>
-    </div>
-  </div>
-  
-  <div id="faqs_container">
-    <div class="faqs-title">
-      <div><h5>How long should I wait before I can use my mattress?</h5>
-      </div>
-      <div>
-        <i class="fas fa-plus" id="faqs-open"></i>
-        <img class="fas fa-times" id="faqs-close" src="{{cdn 'https://cdn11.bigcommerce.com/s-z2qdisybty/product_images/uploaded_images/minus-sign-icon.png?t=1624521698'}}" />
-      </div>
-    </div>
-    <div class="faq-details">
-      <div> 
-        <p>You may start using it right out of the box! Take note, however, that it would take 48 hours up to a week for your mattress to fully decompress. Sleeping on your mattress can help with the decompression. To know more about setting up and mattress care, read this <a href="/mattress-care-setup/" style="text-align: center; color: #00d2ff;">Guide</a>.</p>
-      </div>
-    </div>
-  </div>
+<script>
+  $("#accordion").on("hide.bs.collapse show.bs.collapse", e => {
+  $(e.target)
+    .prev()
+    .find("i:last-child")
+    .toggleClass("fa-minus fa-plus");
+});
+</script>
+
 

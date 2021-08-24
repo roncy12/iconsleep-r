@@ -140,60 +140,79 @@ td.productView-info-value {padding: 5px 12px;}
 }
 .faqs-content h4, .faqs-content p{
     color: #fff;
-    text-align: center;
+    text-align: left;
 }
 .faqs-desc div p {
     text-align: left;
 }
 
-input[type=checkbox]+label, input[type=radio]+label {
-    display: flex;
-    margin-left: .75rem;
-    margin-right: 1.5rem;
-    margin-bottom: 0;
-    vertical-align: baseline;
-    justify-content: space-between;
-}
+// input[type=checkbox]+label, input[type=radio]+label {
+//     display: flex;
+//     margin-left: .75rem;
+//     margin-right: 1.5rem;
+//     margin-bottom: 0;
+//     vertical-align: baseline;
+//     justify-content: space-between;
+// }
 
-.faqs-content {
-    text-align: center;
-    width: 80%;
-    margin: 0 auto;
-    padding: 20px 0;
-}
+// .faqs-content {
+//     text-align: center;
+//     width: 80%;
+//     margin: 0 auto;
+//     padding: 20px 0;
+// }
 
-input + .terms-showMore.prod-show {
-    color: #fff;
-}
-.faqs-desc {
-    text-align: left;
-    width: 60%;
-    margin: 0 2.5%;
-    display: inline-block;
-    vertical-align: top;
-}
+// input + .terms-showMore.prod-show {
+//     color: #fff;
+// }
+// .faqs-desc {
+//     text-align: left;
+//     width: 60%;
+//     margin: 0 2.5%;
+//     display: inline-block;
+//     vertical-align: top;
+// }
 
-.faq-details {
-    display: none;
-  }
+// .faq-details {
+//     display: none;
+//   }
   
-  .faq-details.open {
-    display: block;
-  }
+//   .faq-details.open {
+//     display: block;
+//   }
 
-  i#add {
+//   i#add {
+//     color: #00d2ff;
+// }
+
+// .faqs-title {
+//     display: flex;
+//     justify-content: space-between;
+// }
+
+// #faqs-close{
+//     display: none;
+// }
+
+// #faqs-close#open{
+//     display: block;
+// }
+
+.myaccordion .card-header i.fa.fa-plus, i.fa.fa-minus {
     color: #00d2ff;
 }
-
-.faqs-title {
-    display: flex;
-    justify-content: space-between;
+.myaccordion  .card-header {
+    padding: 0 1.25rem;
+    margin-bottom: 0;
+    border-bottom: transparent;
+    background-color: transparent;
 }
 
-#faqs-close{
-    display: none;
+.myaccordion .card{
+    border: 1px solid transparent;
+    border-bottom: 1px solid $white;
+    padding-bottom: 3px;
 }
-
-#faqs-close#open{
-    display: block;
+.myaccordion .card-header  .fa-lg {
+    font-size: 1em;
 }
