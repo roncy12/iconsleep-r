@@ -132,38 +132,45 @@ td.productView-info-value {padding: 5px 12px;}
 }
 
 .FAQS-categ.green-faq-categ {
-    background: #132448;
+    background: $navyblue;
+    padding: 70px 0;
+    & h4, & p{
+        color: $white;
+        text-align: center;
+    }
+    p{font-size: 18px;}
     div#faqaccordion {
         background: #132448;
         
-        .myaccordion .card-header i.fa.fa-plus, i.fa.fa-minus {
-            color: #00d2ff;
-        }
-        .myaccordion{
-            div#faqaccordion {
-                background: #132448;
-            }
             @media screen and (max-width: 1425px){
                 width: 75% !important;
             } 
-            @media screen and (max-width: 991px){
-                width: auto !important;
+            @media screen and (max-width: 637px){
+                width: 85% !important;
             } 
-        }
-        .myaccordion  .card-header {
-            padding: 0 1.25rem;
-            margin-bottom: 0;
-            border-bottom: transparent;
-            background-color: transparent;
-        }
 
-        .myaccordion .card{
-            border: 1px solid transparent;
-            border-bottom: 1px solid $white;
-            padding-bottom: 3px;
-        }
-        .myaccordion .card-header  .fa-lg {
-            font-size: 1em;
-        }
+            & .card-header {
+                padding: 0 1.25rem;
+                margin-bottom: 0;
+                border-bottom: transparent;
+                background-color: transparent;
+
+                .btn{
+                    text-align: left;
+                }
+                i.fa.fa-plus, i.fa.fa-minus {
+                    color: #00d2ff;
+                }
+            }
+    
+            & .card{
+                border: 1px solid transparent;
+                border-bottom: 1px solid $white;
+                padding-bottom: 3px;
+            }
+            & .card-header  .fa-lg {
+                font-size: 1em;
+            }
+            & .card-body p{text-align: left;}
     }
 }
