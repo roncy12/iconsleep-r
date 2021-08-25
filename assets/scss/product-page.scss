@@ -22,7 +22,7 @@ div.productView > section.productView-details.product-options > div.productView-
 .productView-images {
     width: 60%;
     position: sticky;
-    top: 104px;
+    top: 100px;
     padding: 0 1rem 0 0;
 
 }
@@ -160,10 +160,19 @@ td.productView-info-value {padding: 5px 12px;}
                 margin-bottom: 0;
                 border-bottom: transparent;
                 background-color: transparent;
-
+               
                 .btn{
                     text-align: left;
                 }
+                button.btn.btn-link:hover,  button.btn.btn-link:focus{
+                    text-decoration: none;
+                    border: none;
+                    color: transparent;
+                    outline: transparent !important;
+                    transition: none;
+                    padding: unset;
+                }
+                button.btn.btn-link:not( :hover ){ outline: transparent !important; transition: none; padding:unset; line-height: unset;}
                 i.fa.fa-plus, i.fa.fa-minus {
                     color: #00d2ff;
                 }

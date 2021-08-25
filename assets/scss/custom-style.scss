@@ -2,8 +2,12 @@
 
 
 /**********HEADER**********/
+ [href]:focus{
+    outline: transparent !important;
+}
 .header{
     box-shadow: 0 4px 20px -10px #222;
+
     .head-container {
         display: flex;
         width: 95%;
@@ -60,10 +64,20 @@
         font-size: 18px;
         text-transform: capitalize;
         padding: 0.78571rem 1.14286rem 0.25rem;
+        &:hover{
+            text-decoration: none;
+        }
         @media (min-width: 801px){  padding: 0.78571rem 1.14286rem 1.14286rem; }
     }
 
     .navUser {
+        img.fas.fa-search:hover {
+            background: transparent;
+        }
+        button#quick-search-expand:focus {
+            background: transparent;
+        }
+        
         @media screen and (max-width: 1260px) {
             width: 100%; padding: 1.5rem 1.5rem;
         }
