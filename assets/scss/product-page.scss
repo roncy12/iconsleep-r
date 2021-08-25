@@ -3,12 +3,12 @@
 .container.product-container{padding:0;margin:0;max-width:100%;width:100%}
 .productView{   display: block; width: 100%; margin: 0; padding: 0;}
 .productView-description.green-matt-desc p { margin: 0;}
-// .productView-img-container { max-width: 100%; }
+
 .productView-img-container img { margin: 0; }
 
 .container.product-container .productView .show .stamped-summary-actions { display: none !important;}
-#main-content > div.container.product-container > div:nth-child(2) > div.productView > section.productView-details.product-options > div.productView-options > form:nth-child(1) > div:nth-child(3) > div:nth-child(1) { width: 40%; margin-right: 1rem; }
-#main-content > div.container.product-container > div:nth-child(2) > div.productView > section.productView-details.product-options > div.productView-options > form:nth-child(1) > div:nth-child(3) > div:nth-child(2) { width: 60%; }
+div.container.product-container > div:nth-child(2) > div.productView > section.productView-details.product-options > div.productView-options > form:nth-child(1) > div:nth-child(3) > div:nth-child(1) { width: 40%; margin-right: 1rem; }
+div.container.product-container > div:nth-child(2) > div.productView > section.productView-details.product-options > div.productView-options > form:nth-child(1) > div:nth-child(3) > div:nth-child(2) { width: 60%; }
 // #main-content > div.container.product-container > div:nth-child(2) > div.productView > section.productView-details.product-options > div.productView-options > form:nth-child(1) > div { display: flex; }
 .product-price-stock{display:flex;width:100%;align-items:center}
 .product-price-stock .productView-price{margin:0}
@@ -22,7 +22,7 @@ div.productView > section.productView-details.product-options > div.productView-
 .productView-images {
     width: 60%;
     position: sticky;
-    top: 108px;
+    top: 104px;
     padding: 0 1rem 0 0;
 
 }
@@ -143,6 +143,12 @@ td.productView-info-value {padding: 5px 12px;}
         background: #132448;
         
             @media screen and (max-width: 1425px){
+                width: 50% !important;
+            } 
+            @media screen and (max-width: 991px){
+                width: 65% !important;
+            } 
+            @media screen and (max-width: 736px){
                 width: 75% !important;
             } 
             @media screen and (max-width: 637px){
@@ -175,11 +181,26 @@ td.productView-info-value {padding: 5px 12px;}
     }
 }
 
-// Try This https://amerisleep.com/as2.html
+// // Try This https://amerisleep.com/as2.html
 .productView-img-container img {
     margin: 0;
-    object-fit: contain;
+    object-fit: scale-down;
     width: 100%;
-    max-height: 642px;
+    max-height: 550px;
     height: auto;
+    object-position: center;
+}
+
+.productView-img-container {
+    max-width: 100%;
+    max-height: 550px;
+}
+
+.productView-thumbnails img {
+    width: 100%;
+}
+
+.productView-thumbnail-link {
+    height: 85px;
+    max-width: 125px;
 }
