@@ -185,6 +185,27 @@ body {
         margin: 0 auto;
         max-width: none;
         width: 75%;
+
+
+        .like-us {
+            font-weight: 800;
+            color: #132448 !important;
+            width: auto;
+            text-decoration: none;
+            padding-left: 0.5em;
+        }
+        .btn-a-con {
+            border: 1px solid #e2e8ed;
+            background-color: #e2e8ed;
+            padding: 17px 25px;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+         @media screen and (max-width: 551px) {
+            justify-content: center;
+         }
+        
+        }
       
     }
     .footer-content {
@@ -199,21 +220,7 @@ body {
     }
 }
 
-.like-us {
-    font-weight: 800;
-    color: #132448 !important;
-    width: auto;
-    text-decoration: none;
-    padding-left: 0.5em;
-}
-.btn-a-con {
-    border: 1px solid #e2e8ed;
-    background-color: #e2e8ed;
-    padding: 17px 25px;
-    border-radius: 5px;
-    display: flex;
-    align-items: center;
-}
+
 // END OF FOOTER SECTION
 
 // Homepage Section

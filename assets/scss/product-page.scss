@@ -35,10 +35,16 @@ div.productView > section.productView-details.product-options > div.productView-
 .productView-product {
     padding: 0 4rem 1rem;
     border-bottom: 1px solid transparent;
+    @media screen and (max-width: 1500px){
+        padding: 0 2rem 1rem;
+    }
 }
 
 section.productView-details.product-options {
     padding: 0 5rem 2rem;
+    @media screen and (max-width: 1500px){
+        padding: 0 3rem 1rem;
+    }
 }
 
 .container.product-container.product-div.form-select--small, .form-select--date {
@@ -78,11 +84,10 @@ img#details-close { height: 1.3rem; image-rendering: -webkit-optimize-contrast;}
 .table-detail table { border: 1px solid #888;}
 .table-detail table tr {border: 1px solid #888;}
 td.productView-info-value {padding: 5px 12px;}
-
 // END OF TABLE
 
-// Product Thumb Image
 
+// Product Thumb Image
 .matt-ftr-div.row{max-width:85%;margin:0 auto;flex-flow:row wrap;justify-content:center}
 .grn-ftr-text{text-align:center;max-width:80%;margin:0 auto;font-size:18px}
 .green-matt-features{background:#e2e8ed;width:100%;display:grid;place-content:center;place-items:center;justify-content:center;margin-top:0;padding:2rem 0}
