@@ -41,9 +41,36 @@
             <a href="/reviews/" class="is-truth fade-in from-bounce-in duration-5000 in-view" style="color: #fff; text-align: center;">Shop Mattresses</a>   
         </div>    
     </div>
+
  
 </main>
+<script>
+    $(document).ready(function(){
+        // $(".waking-woman-div>img").toggle();
+        $(".waking-woman-div>img").dblclick(function() {
+            alert( "Handler for .dblclick() called." );
+            $(".waking-woman-div>img").show();
+            if($(".waking-woman-div>img").is(":visible")){
+                alert("visible");
 
+                $(".waking-woman-div>img").click(function() {
+                    alert("clinick ulit");
+                });
+                
+
+            }else{
+                alert("invisible");
+            }
+        });
+           
+
+
+      
+
+
+    });
+
+</script>
 
 {{/partial}}
 {{> layout/base}}

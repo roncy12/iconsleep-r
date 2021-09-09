@@ -1,73 +1,51 @@
-
 @import "colors";
+// ProductView
 .container.product-container{padding:0;margin:0;max-width:100%;width:100%}
 .productView{   display: block; width: 100%; margin: 0; padding: 0;}
 .productView-description.green-matt-desc p { margin: 0;}
-
-.productView-img-container img { margin: 0; }
-
 .container.product-container .productView .show .stamped-summary-actions { display: none !important;}
-div.container.product-container > div:nth-child(2) > div.productView > section.productView-details.product-options > div.productView-options > form:nth-child(1) > div:nth-child(3) > div:nth-child(1) { width: 40%; margin-right: 1rem; }
-div.container.product-container > div:nth-child(2) > div.productView > section.productView-details.product-options > div.productView-options > form:nth-child(1) > div:nth-child(3) > div:nth-child(2) { width: 60%; }
-// #main-content > div.container.product-container > div:nth-child(2) > div.productView > section.productView-details.product-options > div.productView-options > form:nth-child(1) > div { display: flex; }
+@media (min-width: 801px){
+    .productView-images{width:60%;position:sticky;top:100px;padding:0 1rem 0 0}
+    .productView-details{padding-bottom:0;width:40%} }
+
+.productView-product {padding: 0 4rem 1rem; border-bottom: 1px solid transparent;
+    @media screen and (max-width: 1500px){
+        padding: 0 2rem 1rem;
+    } }
+
+section.productView-details.product-options { padding: 0 5rem 2rem;
+    @media screen and (max-width: 1500px){
+        padding: 0 3rem 1rem;
+    } }
+
+// Product Main Image
+.productView-img-container img{margin:0;object-fit:scale-down;width:100%;max-height:550px;height:auto;object-position:center}
+.productView-img-container { max-width: 100%; max-height: 550px;}
+.productView-thumbnails img { width: 100%; }
+.productView-thumbnail-link { height: 85px; max-width: 125px;}
+
+// Select Height and Size
+div.productView-options > form:nth-child(1) > div:nth-child(3) { display: flex; justify-content: space-between; }
+.product-options .productView-options .form-field.select-product:first-child { width: 40%; margin-right: 1em; }
+.product-options .productView-options .form-field.select-product:last-child { width: 58%;}
+.product-div .form-select{border-color:#ccc;background-image:url(../img/product-images/down-arrow-icon.png);background-size:auto;height:3.5em;background-position:right 1.5rem top 2rem;font-size:18px}
+//Price and Stock
 .product-price-stock{display:flex;width:100%;align-items:center}
 .product-price-stock .productView-price{margin:0}
 div.product-price-stock > h3{ margin: 0; }
 .product-price-stock .form-field { margin: 0; }
 .product-price-stock .form-field--stock .form-label{margin:0; background:$lightBlue; color:$white;margin-bottom:0;border-radius:12px;margin-left:1em;padding:0 12px;text-transform:uppercase}
 h1.productView-title{font-size:28px;color:#173456;max-width:85%;line-height:1.2}
-div.productView > section.productView-details.product-options > div.productView-options > form:nth-child(1) > div:nth-child(3) { display: flex; }
-
-@media (min-width: 801px){
-.productView-images {
-    width: 60%;
-    position: sticky;
-    top: 100px;
-    padding: 0 1rem 0 0;
-
-}
-.productView-details {
-    padding-bottom: 0;
-    width: 40%;
-}
-}
-
-.productView-product {
-    padding: 0 4rem 1rem;
-    border-bottom: 1px solid transparent;
-    @media screen and (max-width: 1500px){
-        padding: 0 2rem 1rem;
-    }
-}
-
-section.productView-details.product-options {
-    padding: 0 5rem 2rem;
-    @media screen and (max-width: 1500px){
-        padding: 0 3rem 1rem;
-    }
-}
-
-.container.product-container.product-div.form-select--small, .form-select--date {
-    max-width: 100rem;
-}
-.container.product-container .form-increment .button {
-    border: transparent;
-}
-.product-div .form-increment {
-    border: 1px solid #cccccc;
-    display: flex;
-    justify-content: space-evenly;
-    padding: 1rem 0;
-    border-radius: 5px;
-}
-.product-div .form-input--incrementTotal {
-    background-color: transparent;
-}
-.product-div .form-select{border-color:#ccc;background-image:url(../img/product-images/down-arrow-icon.png);background-size:auto;height:3.5em;background-position:right 1.5rem top 2rem;font-size:18px}
+// Quantity and Add To Cart
+.container.product-container.product-div.form-select--small, .form-select--date {max-width: 100rem;}
+.container.product-container .form-increment .button {border: transparent;}
+.product-div .form-increment{border:1px solid #ccc;display:flex;justify-content:space-evenly;padding:1rem 0;border-radius:5px;}
+.product-div .form-input--incrementTotal {background-color: transparent;}
 div#add-to-cart-wrapper {display:flex;align-items:center}
 .form-field.form-field--increments{ width: 40%; margin-right: 1rem; }
 .productView-options .form-action{ width: 60%; margin-top: 0; }
 .product-options .productView-options .form-action .button{width: 100%;}
+// Ships and Delivery 
 .learnmore-div p{font-size: 14px; margin-top: 4px; text-align: left;}
 .product-div .form-select--small, .form-select--date { max-width: 100%;}
 .product-options .productView-options .form-action .button{font-size:18px;text-transform: uppercase;margin:0;width:100%;background:#173456;color:#fff;border-color:transparent!important;background-image:url(https://cdn11.bigcommerce.com/s-z2qdisybty/product_images/uploaded_images/add-to-cart-img.png?t=1625732593);background-repeat:no-repeat;border-radius:5px;display:grid;background-position:left 2rem center;height:3.7rem}
@@ -78,16 +56,13 @@ div#add-to-cart-wrapper {display:flex;align-items:center}
 .productView-details.product-data #stamped-badge-total, .productView-details.product-data #stamped-badge-title, .productView-details.product-data  #stamped-summary-actions-newreview {color: #888 !important;}
 .detail.d-flex{border-top:1px solid #888;border-bottom:1px solid #888;padding:1.5rem 0}
 img#details-close { height: 1.3rem; image-rendering: -webkit-optimize-contrast;}
-
-// OTHER DETAIL TABLE
+// Other Details 
 .table-detail td.productView-info-name{border:1px solid #888;padding:20px;text-align:left;width:50%;font-weight:600}
 .table-detail table { border: 1px solid #888;}
 .table-detail table tr {border: 1px solid #888;}
 td.productView-info-value {padding: 5px 12px;}
-// END OF TABLE
-
-
-// Product Thumb Image
+/*** Product Contents ***/
+// Sleep Has Been Section
 .matt-ftr-div.row{max-width:85%;margin:0 auto;flex-flow:row wrap;justify-content:center}
 .grn-ftr-text{text-align:center;max-width:80%;margin:0 auto;font-size:18px}
 .green-matt-features{background:#e2e8ed;width:100%;display:grid;place-content:center;place-items:center;justify-content:center;margin-top:0;padding:2rem 0}
@@ -96,7 +71,14 @@ td.productView-info-value {padding: 5px 12px;}
 .grn-ftr-text{text-align:center;max-width:80%;margin:0 auto;font-size:18px}
 .green-matt-features{background:#e2e8ed;width:100%;display:grid;place-content:center;place-items:center;justify-content:center;margin-top:0;padding:2rem 0}
 .grn-matt-img{padding: 12px}
-.prodview-sizechart-img.green-mattress-chart{width:80%;padding:50px 0;display:block;text-align:center;display:-ms-flexbox;display:flex;margin:0 auto;-ms-flex-pack:center;justify-content:center}
+// 3 Features
+.sub-prodview-podimg.green-matt-sub{width:90%;padding:50px 0;display:block;text-align:center;margin:0 auto}
+.sub-prodview-podimg div{width:29%;margin:0 1.5%;display:inline-block}
+// Size Chart Comparison 
+.prodview-sizechart-img.green-mattress-chart{
+    width:80%;padding:50px 0;display:block;text-align:center;display:-ms-flexbox;display:flex;margin:0 auto;-ms-flex-pack:center;justify-content:center;
+    @media (max-width: 800px){flex-flow: row wrap;}
+}
 .prodview-sizechart.green-matt {
     background: url(https://cdn11.bigcommerce.com/s-z2qdisybty/product_images/uploaded_images/is-parallax-pattern.png?t=1623642972&_ga=2.224919322.1496872644.1623634006-1835193253.1617777202);
     background-repeat: no-repeat;
@@ -110,43 +92,17 @@ td.productView-info-value {padding: 5px 12px;}
     perspective: 1px;
     padding: 50px;
 }
-.sub-prodview-podimg.green-matt-sub {
-    width: 90%;
-    padding: 50px 0;
-    display: block;
-    text-align: center;
-    margin: 0 auto;
-}
-.sub-prodview-podimg div{
-    width: 29%;
-    margin: 0 1.5%;
-    display: inline-block;
-}
-@media (max-width: 800px){
-.prodview-sizechart-img.green-mattress-chart{
-    flex-flow: row wrap;
-}
-}
+// Sleep a little longer
+.prodview-advantage-con{display:grid;grid-template-columns:repeat(3,1fr);max-width:75%;margin:0 auto;grid-gap:20px}
 
-.prodview-advantage-con {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    max-width: 75%;
-    margin: 0 auto;
-    grid-gap: 20px;
-}
-
+// Frequently Asked Questions
 .FAQS-categ.green-faq-categ {
     background: $navyblue;
     padding: 70px 0;
-    & h4, & p{
-        color: $white;
-        text-align: center;
-    }
+    & h4, & p{ color: $white; text-align: center; }
     p{font-size: 18px;}
     div#faqaccordion {
-        background: #132448;
-        
+        background: #132448;    
             @media screen and (max-width: 1425px){
                 width: 50% !important;
             } 
@@ -159,62 +115,17 @@ td.productView-info-value {padding: 5px 12px;}
             @media screen and (max-width: 637px){
                 width: 85% !important;
             } 
-
-            & .card-header {
-                padding: 0 1.25rem;
-                margin-bottom: 0;
-                border-bottom: transparent;
-                background-color: transparent;
-               
-                .btn{
-                    text-align: left;
-                }
-                button.btn.btn-link:hover,  button.btn.btn-link:focus{
-                    text-decoration: none;
-                    border: none;
-                    color: transparent;
-                    outline: transparent !important;
-                    transition: none;
-                    padding: unset;
-                }
+            & .card-header { padding: 0 1.25rem; margin-bottom: 0; border-bottom: transparent; background-color: transparent; 
+                .btn{ text-align: left; }
+                button.btn.btn-link:focus,button.btn.btn-link:hover{text-decoration:none;border:none;color:transparent;outline:transparent!important;transition:none;padding:unset}
                 button.btn.btn-link:not( :hover ){ outline: transparent !important; transition: none; padding:unset; line-height: unset;}
-                i.fa.fa-plus, i.fa.fa-minus {
-                    color: #00d2ff;
-                }
+                i.fa.fa-plus, i.fa.fa-minus { color: #00d2ff; }
             }
     
-            & .card{
-                border: 1px solid transparent;
-                border-bottom: 1px solid $white;
-                padding-bottom: 3px;
-            }
-            & .card-header  .fa-lg {
-                font-size: 1em;
-            }
+            & .card{ border: 1px solid transparent; border-bottom: 1px solid $white; padding-bottom: 3px; }
+            & .card-header  .fa-lg { font-size: 1em; }
             & .card-body p{text-align: left;}
     }
 }
 
-// // Try This https://amerisleep.com/as2.html
-.productView-img-container img {
-    margin: 0;
-    object-fit: scale-down;
-    width: 100%;
-    max-height: 550px;
-    height: auto;
-    object-position: center;
-}
 
-.productView-img-container {
-    max-width: 100%;
-    max-height: 550px;
-}
-
-.productView-thumbnails img {
-    width: 100%;
-}
-
-.productView-thumbnail-link {
-    height: 85px;
-    max-width: 125px;
-}
